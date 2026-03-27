@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b">
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
         <Link to="/" className="font-display text-xl tracking-tight">
-          Portfolio
+          Mohammad <span className="text-accent">Iqbal</span>
         </Link>
 
         {/* Desktop */}

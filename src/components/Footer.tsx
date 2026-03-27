@@ -1,10 +1,9 @@
 import { socialLinks } from "@/data/contact";
-import { Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
+import { Github, Linkedin, ExternalLink } from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
   Github,
   Linkedin,
-  Twitter,
   ExternalLink,
 };
 
@@ -13,7 +12,7 @@ const Footer = () => {
     <footer className="border-t">
       <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Mohammad Iqbal. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           {socialLinks.map((link) => {

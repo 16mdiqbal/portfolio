@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Briefcase, PenLine } from "lucide-react";
+import { ArrowRight, Code2, Briefcase, PenLine, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionContainer from "@/components/SectionContainer";
 import profileImg from "@/assets/profile.jpg";
 
 const highlights = [
-  { icon: Briefcase, label: "13+ Years Experience", desc: "Software development & automation testing" },
-  { icon: Code2, label: "Senior SDET", desc: "PayPay Japan · AutoQA team" },
-  { icon: PenLine, label: "AI Engineer", desc: "LLMs, RAG, LangChain & MLOps" },
+  { icon: Briefcase, label: "13+ Years Experience", desc: "Mobile, API & Web automation · Framework design" },
+  { icon: Code2, label: "Senior SDET", desc: "AutoQA · PayPay Japan · CI/CD optimisation" },
+  { icon: PenLine, label: "AI-Driven QA", desc: "RAG, MCP, LLMs · Intelligent & self-healing testing" },
 ];
 
 const Home = () => {
@@ -21,15 +21,15 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-accent font-medium text-sm tracking-wide uppercase"
+            className="text-foreground font-semibold text-sm tracking-widest uppercase"
           >
-            Welcome to my portfolio
+            Senior SDET · AI Engineer · 13+ Years of Experience
           </motion.p>
           <h1 className="page-title">
             Hi, I'm <span className="text-accent">Mohammad Iqbal</span>
           </h1>
           <p className="page-subtitle mx-auto md:mx-0">
-            Senior SDET with 13+ years in software development and automation testing. Currently at PayPay Japan, bridging the gap between traditional QA and AI innovation — building intelligent, self-healing, and data-driven testing frameworks.
+            I help engineering teams ship faster and with greater confidence — combining 13+ years of QA expertise with AI engineering to build intelligent, self-healing automation frameworks at PayPay Japan.
           </p>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-body">
@@ -38,7 +38,9 @@ const Home = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" className="font-body">
-              <Link to="/contact">Get In Touch</Link>
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} download>
+                <Download size={16} className="mr-1" /> Download Resume
+              </a>
             </Button>
           </div>
         </div>
@@ -51,7 +53,7 @@ const Home = () => {
           className="shrink-0"
         >
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-accent/20 ring-offset-4 ring-offset-background">
-            <img src={profileImg} alt="Profile" className="w-full h-full object-cover" />
+            <img src={profileImg} alt="Profile" className="w-full h-full object-cover scale-[1.18] object-top" />
           </div>
         </motion.div>
       </div>
