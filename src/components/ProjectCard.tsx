@@ -1,16 +1,21 @@
 import type { Project } from "@/data/projects";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, GitBranch } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div className="group rounded-xl border bg-card overflow-hidden transition-shadow hover:shadow-lg">
-      {/* Image placeholder */}
-      <div className="aspect-video bg-secondary flex items-center justify-center overflow-hidden">
+      {/* Image / placeholder */}
+      <div className="aspect-video overflow-hidden">
         {project.image ? (
           <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
         ) : (
-          <span className="text-muted-foreground text-sm">Project Preview</span>
+          <div className="w-full h-full bg-gradient-to-br from-accent/20 via-secondary to-accent/5 flex flex-col items-center justify-center gap-2">
+            <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
+              <span className="font-display text-2xl text-accent">{project.title.charAt(0)}</span>
+            </div>
+            <span className="text-xs text-muted-foreground tracking-widest uppercase">{project.techStack[0]}</span>
+          </div>
         )}
       </div>
 
@@ -33,7 +38,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Github size={16} /> Source
+            <GitBranch size={16} /> Source
           </a>
           {project.liveUrl && (
             <a

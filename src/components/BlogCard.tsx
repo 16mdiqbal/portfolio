@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 const platformColors: Record<string, string> = {
   Medium: "bg-foreground text-background",
-  LinkedIn: "bg-[hsl(210,80%,45%)] text-accent-foreground",
+  LinkedIn: "bg-accent text-accent-foreground",
   "Dev.to": "bg-foreground text-background",
   Hashnode: "bg-[hsl(230,70%,55%)] text-accent-foreground",
 };
