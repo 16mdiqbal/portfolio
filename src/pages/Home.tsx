@@ -6,9 +6,9 @@ import SectionContainer from "@/components/SectionContainer";
 import profileImg from "@/assets/profile.jpg";
 
 const highlights = [
-  { icon: Code2, label: "Full-Stack Developer", desc: "React, Node.js, TypeScript" },
-  { icon: Briefcase, label: "3+ Years Experience", desc: "Building production apps" },
-  { icon: PenLine, label: "Technical Writer", desc: "Sharing knowledge & insights" },
+  { icon: Briefcase, label: "13+ Years Experience", desc: "Software development & automation testing" },
+  { icon: Code2, label: "Senior SDET", desc: "PayPay Japan · AutoQA team" },
+  { icon: PenLine, label: "AI Engineer", desc: "LLMs, RAG, LangChain & MLOps" },
 ];
 
 const Home = () => {
@@ -26,10 +26,10 @@ const Home = () => {
             Welcome to my portfolio
           </motion.p>
           <h1 className="page-title">
-            Hi, I'm <span className="text-accent">Your Name</span>
+            Hi, I'm <span className="text-accent">Mohammad Iqbal</span>
           </h1>
           <p className="page-subtitle mx-auto md:mx-0">
-            A passionate developer who builds elegant, scalable web applications. I love turning complex problems into simple, beautiful solutions.
+            Senior SDET with 13+ years in software development and automation testing. Currently at PayPay Japan, bridging the gap between traditional QA and AI innovation — building intelligent, self-healing, and data-driven testing frameworks.
           </p>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-body">

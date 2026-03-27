@@ -5,14 +5,13 @@ export interface SocialLink {
 }
 
 export const contactInfo = {
-  email: "hello@yourname.com",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
+  email: "16.mdiqbal@gmail.com",
+  phone: "",
+  location: "Japan",
 };
 
 // Add your social/profile links here.
 export const socialLinks: SocialLink[] = [
-  { platform: "GitHub", url: "https://github.com", icon: "Github" },
-  { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
-  { platform: "Twitter / X", url: "https://x.com", icon: "Twitter" },
+  { platform: "GitHub", url: "https://github.com/16mdiqbal", icon: "Github" },
+  { platform: "LinkedIn", url: "https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/", icon: "Linkedin" },
 ];

@@ -1,9 +1,9 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, ExternalLink } from "lucide-react";
 import { contactInfo, socialLinks } from "@/data/contact";
 import SectionContainer from "@/components/SectionContainer";
 
 const iconMap: Record<string, React.ElementType> = {
-  Github, Linkedin, Twitter, ExternalLink,
+  Github, Linkedin, ExternalLink,
 };
 
 const Contact = () => {
@@ -21,10 +21,6 @@ const Contact = () => {
             <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
               <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><Mail size={18} /></div>
               <span className="text-sm">{contactInfo.email}</span>
-            </a>
-            <a href={`tel:${contactInfo.phone}`} className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><Phone size={18} /></div>
-              <span className="text-sm">{contactInfo.phone}</span>
             </a>
             <div className="flex items-center gap-3 text-muted-foreground">
               <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><MapPin size={18} /></div>
