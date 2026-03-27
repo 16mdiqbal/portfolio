@@ -2,8 +2,9 @@ import { Download, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionContainer from "@/components/SectionContainer";
 
-// Place your resume PDF at public/resume.pdf
+// Place your resume PDF at public/resume.pdf — currently using resume.html as placeholder
 const RESUME_PDF_PATH = "/resume.pdf";
+const RESUME_EMBED_PATH = "/resume.html";
 
 const Resume = () => {
   return (
@@ -25,7 +26,7 @@ const Resume = () => {
       <div className="rounded-xl border bg-card overflow-hidden">
         <div className="aspect-[8.5/11] w-full">
           <iframe
-            src={`${RESUME_PDF_PATH}#toolbar=0`}
+            src={RESUME_EMBED_PATH}
             title="Resume"
             className="w-full h-full border-0"
           />
