@@ -7,7 +7,7 @@ export interface SocialLink {
 export const contactInfo = {
   email: "16.mdiqbal@gmail.com",
   phone: "",
-  location: "Japan",
+  location: "Tokyo, Japan",
 };
 
 // Add your social/profile links here.

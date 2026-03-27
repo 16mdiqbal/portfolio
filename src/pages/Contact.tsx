@@ -1,23 +1,32 @@
-import { Mail, MapPin, Github, Linkedin, ExternalLink } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
+import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Send } from "lucide-react";
 import { contactInfo, socialLinks } from "@/data/contact";
 import SectionContainer from "@/components/SectionContainer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const iconMap: Record<string, React.ElementType> = {
   Github, Linkedin, ExternalLink,
 };
 
+const CALENDLY_URL = "https://calendly.com/16-mdiqbal";
+
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xpqowvbe");
+
   return (
     <SectionContainer>
       <h1 className="page-title">Contact</h1>
-      <p className="page-subtitle mt-2 mb-4">Let's connect — I'd love to hear from you.</p>
+      <p className="page-subtitle mt-2 mb-4">Open to new opportunities, collaborations, and conversations. Feel free to reach out.</p>
       <div className="accent-line mb-10" />
 
       <div className="grid md:grid-cols-2 gap-10">
-        {/* Contact details */}
-        <div className="space-y-6">
-          <h2 className="font-display text-2xl">Get In Touch</h2>
+        {/* Left column */}
+        <div className="space-y-8">
+          {/* Contact details */}
           <div className="space-y-4">
+            <h2 className="font-display text-2xl">Get In Touch</h2>
             <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
               <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><Mail size={18} /></div>
               <span className="text-sm">{contactInfo.email}</span>
@@ -27,12 +36,24 @@ const Contact = () => {
               <span className="text-sm">{contactInfo.location}</span>
             </div>
           </div>
-        </div>
 
-        {/* Social links */}
-        <div className="space-y-6">
-          <h2 className="font-display text-2xl">Profiles</h2>
+          {/* Book a call */}
+          <div className="rounded-xl border bg-card p-6 space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><Calendar size={18} /></div>
+              <h2 className="font-display text-xl">Book a Call</h2>
+            </div>
+            <p className="text-sm text-muted-foreground">Prefer to talk directly? Schedule a 30-minute call at a time that works for you.</p>
+            <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-body">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Calendar size={16} className="mr-2" /> Schedule a Meeting
+              </a>
+            </Button>
+          </div>
+
+          {/* Social links */}
           <div className="space-y-3">
+            <h2 className="font-display text-2xl">Profiles</h2>
             {socialLinks.map((link) => {
               const Icon = iconMap[link.icon] || ExternalLink;
               return (
@@ -52,6 +73,36 @@ const Contact = () => {
               );
             })}
           </div>
+        </div>
+
+        {/* Contact form */}
+        <div className="space-y-4">
+          <h2 className="font-display text-2xl">Send a Message</h2>
+          {state.succeeded ? (
+            <div className="rounded-xl border bg-card p-8 text-center space-y-2">
+              <p className="font-display text-xl">Message sent!</p>
+              <p className="text-sm text-muted-foreground">Thanks for reaching out — I'll get back to you soon.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Input name="name" placeholder="Your Name" required className="font-body" />
+                <div>
+                  <Input name="email" type="email" placeholder="Your Email" required className="font-body" />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-destructive mt-1" />
+                </div>
+              </div>
+              <Input name="subject" placeholder="Subject" required className="font-body" />
+              <div>
+                <Textarea name="message" placeholder="Your message..." rows={6} required className="font-body resize-none" />
+                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-destructive mt-1" />
+              </div>
+              <Button type="submit" disabled={state.submitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-body">
+                <Send size={16} className="mr-2" />
+                {state.submitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          )}
         </div>
       </div>
     </SectionContainer>
