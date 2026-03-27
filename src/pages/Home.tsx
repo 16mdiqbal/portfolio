@@ -32,12 +32,12 @@ const Home = () => {
             I help engineering teams ship faster and with greater confidence — combining 13+ years of QA expertise with AI engineering to build intelligent, self-healing automation frameworks at PayPay Japan.
           </p>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-body">
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
               <Link to="/projects">
                 View Projects <ArrowRight size={16} className="ml-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="font-body">
+            <Button asChild variant="outline">
               <a href={`${import.meta.env.BASE_URL}resume.pdf`} download>
                 <Download size={16} className="mr-1" /> Download Resume
               </a>

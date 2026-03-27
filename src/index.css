@@ -84,6 +84,10 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display);
   }
+
+  input, textarea, button, select {
+    font-family: var(--font-body);
+  }
 }
 
 @layer components {

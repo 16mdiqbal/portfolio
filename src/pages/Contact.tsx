@@ -37,20 +37,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Book a call */}
-          <div className="rounded-xl border bg-card p-6 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><Calendar size={18} /></div>
-              <h2 className="font-display text-xl">Book a Call</h2>
-            </div>
-            <p className="text-sm text-muted-foreground">Prefer to talk directly? Schedule a 30-minute call at a time that works for you.</p>
-            <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-body">
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                <Calendar size={16} className="mr-2" /> Schedule a Meeting
-              </a>
-            </Button>
-          </div>
-
           {/* Social links */}
           <div className="space-y-3">
             <h2 className="font-display text-2xl">Profiles</h2>
@@ -73,6 +59,21 @@ const Contact = () => {
               );
             })}
           </div>
+
+          {/* Book a call */}
+          <div className="rounded-xl border bg-card p-6 space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><Calendar size={18} /></div>
+              <h2 className="font-display text-xl">Book a Call</h2>
+            </div>
+            <p className="text-sm text-muted-foreground">Prefer to talk directly? Schedule a 30-minute call at a time that works for you.</p>
+            <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <Calendar size={16} className="mr-2" /> Schedule a Meeting
+              </a>
+            </Button>
+          </div>
+
         </div>
 
         {/* Contact form */}
@@ -86,18 +87,18 @@ const Contact = () => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
-                <Input name="name" placeholder="Your Name" required className="font-body" />
+                <Input name="name" placeholder="Your Name" required />
                 <div>
-                  <Input name="email" type="email" placeholder="Your Email" required className="font-body" />
+                  <Input name="email" type="email" placeholder="Your Email" required />
                   <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-destructive mt-1" />
                 </div>
               </div>
-              <Input name="subject" placeholder="Subject" required className="font-body" />
+              <Input name="subject" placeholder="Subject" required />
               <div>
-                <Textarea name="message" placeholder="Your message..." rows={6} required className="font-body resize-none" />
+                <Textarea name="message" placeholder="Your message..." rows={6} required className="resize-none" />
                 <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-destructive mt-1" />
               </div>
-              <Button type="submit" disabled={state.submitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-body">
+              <Button type="submit" disabled={state.submitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 <Send size={16} className="mr-2" />
                 {state.submitting ? "Sending..." : "Send Message"}
               </Button>

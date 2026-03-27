@@ -14,7 +14,7 @@ const Resume = () => {
           <h1 className="page-title">Resume</h1>
           <p className="page-subtitle mt-2">My professional experience and qualifications.</p>
         </div>
-        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-body shrink-0">
+        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 shrink-0">
           <a href={RESUME_PDF_PATH} download>
             <Download size={16} className="mr-2" /> Download PDF
           </a>

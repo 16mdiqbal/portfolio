@@ -27,7 +27,7 @@ const BlogCard = ({ entry }: { entry: BlogEntry }) => {
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">{entry.excerpt}</p>
 
       <div className="flex items-center gap-3">
-        <Badge className={`text-xs font-body ${platformColors[entry.platform] || "bg-secondary text-secondary-foreground"}`}>
+        <Badge className={`text-xs ${platformColors[entry.platform] || "bg-secondary text-secondary-foreground"}`}>
           {entry.platform}
         </Badge>
         {entry.date && (
