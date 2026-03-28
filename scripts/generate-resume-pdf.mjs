@@ -15,7 +15,7 @@ await page.pdf({
   path: pdfPath,
   format: 'A4',
   printBackground: true,
-  margin: { top: '20px', bottom: '20px', left: '0', right: '0' },
+  margin: { top: '0', bottom: '0', left: '0', right: '0' },
 });
 await browser.close();
 console.log('resume.pdf generated successfully');
