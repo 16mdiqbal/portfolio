@@ -41,6 +41,15 @@ npm run preview    # Preview production build
 
 **Path alias**: `@/` maps to `src/` — use this for all imports.
 
+## TypeScript config
+
+Three tsconfig files with distinct scopes:
+- `tsconfig.json` — root, references the two below
+- `tsconfig.app.json` — covers `src/` (React app code)
+- `tsconfig.node.json` — covers `vite.config.ts` and `tailwind.config.ts` (Node/build tooling), includes `"types": ["node"]` so `require()` is recognised
+
+If adding new build/config files (e.g. `postcss.config.ts`), add them to the `include` array in `tsconfig.node.json`. Do NOT add `"types": ["node"]` to `tsconfig.app.json` as it is not needed for app code.
+
 ## Deployment
 
 Hosted on GitHub Pages at `https://16mdiqbal.github.io/portfolio/`. Deployed automatically via `.github/workflows/deploy.yml` on every push to `main`. Vite base is `/portfolio/` in production and `/` in development.
