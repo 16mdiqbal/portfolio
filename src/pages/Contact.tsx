@@ -10,10 +10,8 @@ const iconMap: Record<string, React.ElementType> = {
   Github, Linkedin, ExternalLink,
 };
 
-const CALENDLY_URL = "https://calendly.com/16-mdiqbal";
-
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xpqowvbe");
+  const [state, handleSubmit] = useForm(contactInfo.formspreeId);
 
   return (
     <SectionContainer>
@@ -68,7 +66,7 @@ const Contact = () => {
             </div>
             <p className="text-sm text-muted-foreground">Prefer to talk directly? Schedule a 30-minute call at a time that works for you.</p>
             <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <a href={contactInfo.calendlyUrl} target="_blank" rel="noopener noreferrer">
                 <Calendar size={16} className="mr-2" /> Schedule a Meeting
               </a>
             </Button>

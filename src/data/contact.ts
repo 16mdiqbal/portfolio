@@ -8,6 +8,8 @@ export const contactInfo = {
   email: "16.mdiqbal@gmail.com",
   phone: "",
   location: "Tokyo, Japan",
+  calendlyUrl: "https://calendly.com/16-mdiqbal",
+  formspreeId: "xpqowvbe",
 };
 
 // Add your social/profile links here.
