@@ -4,13 +4,13 @@ import { fileURLToPath } from 'url';
 import { existsSync, mkdirSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const htmlPath = resolve(__dirname, '../public/resume.html');
+const htmlPath = resolve(__dirname, '../public/resume-embed.html');
 
 // Output to dist/ in CI, public/ locally (so git tracks it)
 const distDir = resolve(__dirname, '../dist');
 if (!existsSync(distDir)) mkdirSync(distDir, { recursive: true });
 const pdfPath = resolve(__dirname, '../dist/resume.pdf');
-const publicPdfPath = resolve(__dirname, '../public/resume.pdf');
+const publicPdfPath = resolve(__dirname, '../public/resume.pdf'); // keep pdf name unchanged
 
 const browser = await puppeteer.launch({
   args: ['--no-sandbox', '--disable-setuid-sandbox'],

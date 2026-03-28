@@ -4,7 +4,7 @@ import SectionContainer from "@/components/SectionContainer";
 
 // Place your resume PDF at public/resume.pdf — currently using resume.html as placeholder
 const RESUME_PDF_PATH = `${import.meta.env.BASE_URL}resume.pdf`;
-const RESUME_EMBED_PATH = `${import.meta.env.BASE_URL}resume.html`;
+const RESUME_EMBED_PATH = `${import.meta.env.BASE_URL}resume-embed.html`;
 
 const Resume = () => {
   return (
