@@ -29,6 +29,11 @@ jobs:
 
       - run: npm run build
 
+      - name: Generate resume PDF from HTML
+        run: |
+          npm install puppeteer
+          node scripts/generate-resume-pdf.mjs
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
