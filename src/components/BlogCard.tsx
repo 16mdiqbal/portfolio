@@ -15,13 +15,15 @@ const BlogCard = ({ entry }: { entry: BlogEntry }) => {
       href={entry.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl border bg-card p-6 transition-all hover:shadow-lg hover:border-accent/30"
+      className="group block rounded-xl border-l-4 border-l-accent border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-l-accent hover:border-accent/30"
     >
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
         <h3 className="font-display text-xl group-hover:text-accent transition-colors">
           {entry.title}
         </h3>
-        <ArrowUpRight size={18} className="shrink-0 text-muted-foreground group-hover:text-accent transition-colors" />
+        <span className="hidden sm:flex items-center gap-1 text-xs text-muted-foreground group-hover:text-accent transition-colors shrink-0">
+          Read on {entry.platform} <ArrowUpRight size={14} />
+        </span>
       </div>
 
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">{entry.excerpt}</p>

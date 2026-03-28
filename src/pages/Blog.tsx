@@ -14,6 +14,19 @@ const Blog = () => {
           <BlogCard key={entry.id} entry={entry} />
         ))}
       </div>
+
+      <p className="text-sm text-muted-foreground text-center mt-10">
+        More posts coming soon — follow me on{" "}
+        <a
+          href="https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:underline"
+        >
+          LinkedIn
+        </a>{" "}
+        to stay updated.
+      </p>
     </SectionContainer>
   );
 };
