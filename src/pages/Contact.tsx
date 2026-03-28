@@ -87,15 +87,23 @@ const Contact = () => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
-                <Input name="name" placeholder="Your Name" required />
-                <div>
-                  <Input name="email" type="email" placeholder="Your Email" required />
+                <div className="space-y-1">
+                  <label htmlFor="name" className="text-sm font-medium">Name</label>
+                  <Input id="name" name="name" placeholder="Your Name" required />
+                </div>
+                <div className="space-y-1">
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
+                  <Input id="email" name="email" type="email" placeholder="Your Email" required />
                   <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-destructive mt-1" />
                 </div>
               </div>
-              <Input name="subject" placeholder="Subject" required />
-              <div>
-                <Textarea name="message" placeholder="Your message..." rows={6} required className="resize-none" />
+              <div className="space-y-1">
+                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                <Input id="subject" name="subject" placeholder="Subject" required />
+              </div>
+              <div className="space-y-1">
+                <label htmlFor="message" className="text-sm font-medium">Message</label>
+                <Textarea id="message" name="message" placeholder="Your message..." rows={6} required className="resize-none" />
                 <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-destructive mt-1" />
               </div>
               <Button type="submit" disabled={state.submitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
