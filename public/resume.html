@@ -12,23 +12,20 @@
       font-size: 13px;
       color: #1f1815;
       background: #fafaf9;
-      padding: 40px 52px;
       line-height: 1.6;
-      max-width: 920px;
-      margin: 0 auto;
     }
 
-    /* ── Header ── */
+    /* ── Top Header (full width) ── */
     .header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: 20px;
+      align-items: flex-end;
+      padding: 28px 32px 18px;
       border-bottom: 3px solid #ff8533;
-      margin-bottom: 26px;
+      background: #fff;
     }
     .header-left h1 {
-      font-size: 32px;
+      font-size: 30px;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #1f1815;
@@ -37,63 +34,63 @@
       font-size: 13px;
       color: #ff8533;
       font-weight: 600;
-      margin-top: 5px;
+      margin-top: 4px;
     }
     .header-right {
       text-align: right;
       font-size: 11.5px;
       color: #555;
-      line-height: 2;
-      margin-top: 4px;
+      line-height: 1.9;
     }
-    .header-right a {
-      color: #555;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
+    .header-right a { color: #555; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
     .header-right a:hover { color: #ff8533; }
-    .header-right .contact-row {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 5px;
-    }
-    .header-right svg {
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-      opacity: 0.6;
+    .header-right .contact-row { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
+    .header-right svg { width: 12px; height: 12px; flex-shrink: 0; opacity: 0.6; }
+
+    /* ── Two-column body ── */
+    .body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - 100px);
     }
 
-    /* ── Section ── */
-    section { margin-bottom: 24px; }
+    /* ── Left sidebar ── */
+    .sidebar {
+      background: #fff8f4;
+      padding: 24px 20px;
+      border-right: 1px solid #f0e8e2;
+    }
+
+    /* ── Right main ── */
+    .main {
+      background: #fff;
+      padding: 24px 28px;
+    }
+
+    /* ── Section titles ── */
     .section-title {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #ff8533;
       background: #fff8f4;
       border-left: 3px solid #ff8533;
-      padding: 5px 10px;
+      padding: 4px 9px;
       margin-bottom: 14px;
     }
+    .sidebar .section-title {
+      background: #ffeedd;
+    }
+    section { margin-bottom: 22px; }
 
     /* ── Summary ── */
-    .summary-box {
-      background: #fff8f4;
-      border: 1px solid #ffe0c8;
-      border-radius: 6px;
-      padding: 14px 16px;
-    }
-    .summary-box p { color: #333; font-size: 12.5px; line-height: 1.7; }
+    .summary p { font-size: 12.5px; color: #333; line-height: 1.7; }
 
-    /* ── Experience Timeline ── */
+    /* ── Timeline ── */
     .timeline {
       position: relative;
-      padding-left: 28px;
+      padding-left: 22px;
     }
     .timeline::before {
       content: '';
@@ -106,13 +103,15 @@
     }
     .entry {
       position: relative;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px dashed #f0e8e2;
     }
-    .entry:last-child { margin-bottom: 0; }
+    .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .entry::before {
       content: '';
       position: absolute;
-      left: -27px;
+      left: -21px;
       top: 5px;
       width: 10px;
       height: 10px;
@@ -126,135 +125,98 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 8px;
+      flex-wrap: wrap;
     }
-    .entry-header .role {
-      font-weight: 700;
-      font-size: 13.5px;
-      color: #1f1815;
-    }
+    .entry-header .role { font-weight: 700; font-size: 13px; color: #1f1815; }
     .entry-header .date {
-      font-size: 11px;
+      font-size: 10.5px;
       color: #ff8533;
-      white-space: nowrap;
-      flex-shrink: 0;
       font-weight: 600;
       background: #fff8f4;
       border: 1px solid #ffe0c8;
       border-radius: 20px;
-      padding: 1px 9px;
+      padding: 1px 8px;
+      white-space: nowrap;
     }
-    .entry .company {
-      font-size: 12px;
-      color: #666;
-      font-weight: 600;
-      margin-bottom: 8px;
-      margin-top: 2px;
-    }
-    .entry ul {
-      padding-left: 14px;
-      color: #3a3a3a;
-    }
-    .entry ul li {
-      margin-bottom: 4px;
-      font-size: 12.5px;
-      line-height: 1.55;
-    }
+    .entry .company { font-size: 11.5px; color: #666; font-weight: 600; margin: 2px 0 6px; }
+    .entry ul { padding-left: 16px; color: #3a3a3a; list-style-type: disc; }
+    .entry ul li { margin-bottom: 3px; font-size: 12px; line-height: 1.5; padding-left: 2px; }
 
-    /* ── Skills ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px 28px;
-    }
-    .skill-group dt {
-      font-weight: 700;
-      font-size: 11.5px;
-      color: #1f1815;
-      margin-bottom: 6px;
-    }
-    .skill-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
+    /* ── Sidebar: Skills ── */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group dt { font-weight: 700; font-size: 11.5px; color: #1f1815; margin-bottom: 6px; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 5px; }
     .chip {
       background: #fff;
       color: #444;
       border: 1px solid #e0d8d2;
       border-radius: 20px;
-      padding: 2px 9px;
-      font-size: 11px;
+      padding: 2px 8px;
+      font-size: 10.5px;
     }
 
-    /* ── Education ── */
-    .edu-entry {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      position: relative;
-      padding-left: 28px;
-    }
+    /* ── Sidebar: Education ── */
+    .edu-entry { position: relative; padding-left: 16px; }
     .edu-entry::before {
       content: '';
       position: absolute;
-      left: 5px;
+      left: 0;
       top: 5px;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       background: #ff8533;
-      border: 2px solid #fff;
+      border: 2px solid #fff8f4;
       border-radius: 50%;
       box-shadow: 0 0 0 2px #ff8533;
     }
-    .edu-entry .degree { font-weight: 700; font-size: 13px; }
+    .edu-entry .degree { font-weight: 700; font-size: 12px; color: #1f1815; }
+    .edu-entry .school { font-size: 11px; color: #666; font-weight: 600; margin-top: 2px; }
     .edu-entry .year {
-      font-size: 11px;
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 10.5px;
       color: #ff8533;
-      white-space: nowrap;
       font-weight: 600;
-      background: #fff8f4;
+      background: #fff;
       border: 1px solid #ffe0c8;
       border-radius: 20px;
-      padding: 1px 9px;
+      padding: 1px 8px;
     }
-    .edu-entry .school { color: #666; font-size: 12px; font-weight: 600; margin-top: 2px; }
 
-@media print {
+    @media print {
       * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      body { padding: 14px 26px; background: #fff; font-size: 11px; line-height: 1.45; }
-      .header { padding-bottom: 10px; margin-bottom: 12px; }
-      .header-left h1 { font-size: 22px; }
-      .header-left .title { font-size: 11px; margin-top: 3px; }
+      body { font-size: 11px; background: #fff; }
+      .header { padding: 16px 24px 14px; }
+      .header-left h1 { font-size: 24px; }
+      .header-left .title { font-size: 11px; }
       .header-right { font-size: 10.5px; line-height: 1.8; }
-      section { margin-bottom: 10px; }
-      .section-title { padding: 3px 8px; margin-bottom: 7px; font-size: 9px; }
-      .summary-box { padding: 8px 11px; }
-      .summary-box p { font-size: 11px; line-height: 1.5; }
-      .timeline { padding-left: 20px; }
+      .body { grid-template-columns: 185px 1fr; min-height: unset; }
+      .sidebar { padding: 16px 14px; }
+      .main { padding: 16px 20px; }
+      section { margin-bottom: 14px; }
+      .section-title { font-size: 8.5px; padding: 3px 8px; margin-bottom: 10px; }
+      .summary p { font-size: 11px; line-height: 1.55; }
+      .timeline { padding-left: 18px; }
       .timeline::before { left: 4px; }
-      .entry { margin-bottom: 0; padding-bottom: 9px; border-bottom: 1px dashed #f0e8e2; }
-      .entry:last-child { border-bottom: none; padding-bottom: 0; }
-      .entry::before { left: -19px; width: 10px; height: 10px; top: 4px; }
-      .entry-header .role { font-size: 12px; }
-      .entry-header .date { font-size: 10px; padding: 1px 7px; }
-      .entry .company { font-size: 11px; margin-bottom: 4px; margin-top: 1px; }
-      .entry ul { padding-left: 16px; list-style-type: disc; }
-      .entry ul li { margin-bottom: 2px; font-size: 11px; padding-left: 2px; }
-      .skills-grid { gap: 6px 18px; }
-      .skill-group dt { font-size: 11px; margin-bottom: 4px; }
+      .entry { margin-bottom: 10px; padding-bottom: 10px; }
+      .entry::before { left: -17px; width: 9px; height: 9px; top: 4px; }
+      .entry-header .role { font-size: 11.5px; }
+      .entry-header .date { font-size: 10px; }
+      .entry .company { font-size: 11px; margin-bottom: 4px; }
+      .entry ul { padding-left: 13px; }
+      .entry ul li { font-size: 11px; margin-bottom: 2px; }
+      .skill-group { margin-bottom: 10px; }
+      .skill-group dt { font-size: 10.5px; margin-bottom: 4px; }
       .chip { font-size: 10px; padding: 1px 6px; }
-      .edu-entry { padding-left: 20px; }
-      .edu-entry::before { left: 1px; width: 10px; height: 10px; top: 4px; }
-      .edu-entry .degree { font-size: 11.5px; }
+      .edu-entry .degree { font-size: 11px; }
+      .edu-entry .school { font-size: 10.5px; }
       .edu-entry .year { font-size: 10px; }
-      .edu-entry .school { font-size: 11px; }
-      body { padding-bottom: 22px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Full-width header -->
   <header class="header">
     <div class="header-left">
       <h1>Mohammad Iqbal</h1>
@@ -280,151 +242,161 @@
     </div>
   </header>
 
-  <!-- Summary -->
-  <section class="summary">
-    <div class="section-title">Professional Summary</div>
-    <div class="summary-box">
-      <p>
-        Senior SDET with 14+ years of experience building automation frameworks across Mobile, API, and Web platforms. At PayPay Japan, I work within the AutoQA team — designing tooling, improving CI/CD pipelines, and helping product teams ship with confidence. Over the past couple of years, I've been deliberately moving toward AI-driven QA — experimenting with LLMs and LangChain to make test automation smarter, from automated test generation to early foundations of self-healing frameworks.
-      </p>
-    </div>
-  </section>
+  <!-- Two-column body -->
+  <div class="body">
 
-  <!-- Experience -->
-  <section>
-    <div class="section-title">Experience</div>
+    <!-- Left sidebar -->
+    <aside class="sidebar">
 
-    <div class="timeline">
-    <div class="entry">
-      <div class="entry-header">
-        <span class="role">Software Development Engineer in Test (SDET)</span>
-        <span class="date">Sep 2021 – Present</span>
-      </div>
-      <div class="company">PayPay Corporation · Tokyo, Japan</div>
-      <ul>
-        <li>Part of the AutoQA team — building and maintaining automation tooling that helps reduce manual QA work across product teams.</li>
-        <li>Work across Mobile (Appium), API, and Web (Selenium) automation frameworks, keeping them stable and up to date.</li>
-        <li>Improved CI/CD pipelines using GitHub Actions — faster runs, better reliability, and parallel test execution.</li>
-        <li>Experimenting with LLM-based tools for test case generation and early steps toward self-healing test frameworks.</li>
-        <li>Work closely with global and Japanese teams to coordinate releases and maintain test coverage.</li>
-      </ul>
-    </div>
+      <!-- Skills -->
+      <section>
+        <div class="section-title">Technical Skills</div>
+        <dl>
+          <div class="skill-group">
+            <dt>Automation &amp; QA</dt>
+            <div class="skill-chips">
+              <span class="chip">Selenium</span>
+              <span class="chip">Appium</span>
+              <span class="chip">Cucumber</span>
+              <span class="chip">TestNG</span>
+              <span class="chip">JUnit</span>
+              <span class="chip">Rest-Assured</span>
+              <span class="chip">Page Object Model</span>
+              <span class="chip">Hybrid Framework</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <dt>AI &amp; Machine Learning</dt>
+            <div class="skill-chips">
+              <span class="chip">LLMs</span>
+              <span class="chip">RAG</span>
+              <span class="chip">MCP</span>
+              <span class="chip">LangChain</span>
+              <span class="chip">OpenAI API</span>
+              <span class="chip">Hugging Face</span>
+              <span class="chip">Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <dt>DevOps &amp; CI/CD</dt>
+            <div class="skill-chips">
+              <span class="chip">GitHub Actions</span>
+              <span class="chip">Jenkins</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Maven</span>
+              <span class="chip">Git</span>
+              <span class="chip">Bitbucket</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <dt>Languages</dt>
+            <div class="skill-chips">
+              <span class="chip">Java (Expert)</span>
+              <span class="chip">Python (Proficient)</span>
+              <span class="chip">TypeScript</span>
+            </div>
+          </div>
+        </dl>
+      </section>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="role">Senior Software Development Engineer in Test</span>
-        <span class="date">Oct 2019 – Aug 2021</span>
-      </div>
-      <div class="company">Qualitest Group · Bengaluru, India</div>
-      <ul>
-        <li>Built and maintained a Hybrid Automation Framework (Java, Selenium, Rest-Assured) covering UI and REST API testing for SiriusXM, a large US media client.</li>
-        <li>Set up and managed Jenkins CI pipelines for regression cycles — reduced manual effort by around 60%.</li>
-        <li>Was the main QA contact for the client, handling daily standups and regular status calls with senior stakeholders across time zones.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <span class="role">Test Lead</span>
-        <span class="date">Mar 2018 – Oct 2019</span>
-      </div>
-      <div class="company">HCL Technologies · Bengaluru, India</div>
-      <ul>
-        <li>Built test automation for SOAP webservices and UI flows for a mortgage origination platform used by ING Bank, Australia.</li>
-        <li>Ran Agile/Scrum ceremonies and helped junior engineers get comfortable with the automation framework.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <span class="role">Senior Software Engineer (SDET)</span>
-        <span class="date">Dec 2013 – Feb 2018</span>
-      </div>
-      <div class="company">Larsen &amp; Toubro Infotech (LTI) · Chennai, India</div>
-      <ul>
-        <li>Worked onsite in Tokyo for ~19 months — gathered requirements directly from Japanese client teams at Hitachi.</li>
-        <li>Automated storage monitoring UIs and REST APIs for Hitachi; led a module team of 6 engineers.</li>
-        <li>Built a REST API automation framework using Java, Rest-Assured, and Groovy with TestNG reporting.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <span class="role">Software Engineer</span>
-        <span class="date">Sep 2011 – Nov 2013</span>
-      </div>
-      <div class="company">Xerago · Chennai, India</div>
-      <ul>
-        <li>Built UI components for an insurance portal (Royal Sundaram) using JSP, JavaScript, and jQuery.</li>
-        <li>Worked on REST APIs and database layer; handled bug fixes and feature delivery as part of a small dev team.</li>
-      </ul>
-    </div>
-    </div><!-- end timeline -->
-  </section>
-
-  <!-- Skills -->
-  <section>
-    <div class="section-title">Technical Skills</div>
-    <dl class="skills-grid">
-      <div class="skill-group">
-        <dt>Automation &amp; QA</dt>
-        <div class="skill-chips">
-          <span class="chip">Selenium</span>
-          <span class="chip">Appium</span>
-          <span class="chip">Cucumber (BDD)</span>
-          <span class="chip">TestNG</span>
-          <span class="chip">JUnit</span>
-          <span class="chip">Rest-Assured</span>
-          <span class="chip">Page Object Model</span>
-          <span class="chip">Hybrid Framework</span>
+      <!-- Education -->
+      <section>
+        <div class="section-title">Education</div>
+        <div class="edu-entry">
+          <div class="degree">B.Tech — Information Technology</div>
+          <div class="school">SRM Institute of Science &amp; Technology</div>
+          <span class="year">2006 – 2010 · 82%</span>
         </div>
-      </div>
-      <div class="skill-group">
-        <dt>AI &amp; Machine Learning</dt>
-        <div class="skill-chips">
-          <span class="chip">LLMs</span>
-          <span class="chip">RAG</span>
-          <span class="chip">MCP</span>
-          <span class="chip">LangChain</span>
-          <span class="chip">OpenAI API</span>
-          <span class="chip">Hugging Face</span>
-          <span class="chip">Prompt Engineering</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <dt>DevOps &amp; CI/CD</dt>
-        <div class="skill-chips">
-          <span class="chip">GitHub Actions</span>
-          <span class="chip">Jenkins</span>
-          <span class="chip">Docker</span>
-          <span class="chip">Maven</span>
-          <span class="chip">Git</span>
-          <span class="chip">Bitbucket</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <dt>Languages</dt>
-        <div class="skill-chips">
-          <span class="chip">Java (Expert)</span>
-          <span class="chip">Python (Proficient)</span>
-          <span class="chip">TypeScript</span>
-        </div>
-      </div>
-    </dl>
-  </section>
+      </section>
 
-  <!-- Education -->
-  <section>
-    <div class="section-title">Education</div>
-    <div class="edu-entry">
-      <div>
-        <div class="degree">Bachelor of Technology (B.Tech) — Information Technology</div>
-        <div class="school">SRM Institute of Science &amp; Technology</div>
-      </div>
-      <div class="year">2006 – 2010 · 82%</div>
-    </div>
-  </section>
+    </aside>
 
+    <!-- Right main -->
+    <main class="main">
+
+      <!-- Summary -->
+      <section class="summary">
+        <div class="section-title">Professional Summary</div>
+        <p>
+          Senior SDET with 14+ years of experience building automation frameworks across Mobile, API, and Web platforms. At PayPay Japan, I work within the AutoQA team — designing tooling, improving CI/CD pipelines, and helping product teams ship with confidence. Over the past couple of years, I've been deliberately moving toward AI-driven QA — experimenting with LLMs and LangChain to make test automation smarter, from automated test generation to early foundations of self-healing frameworks.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <div class="section-title">Experience</div>
+        <div class="timeline">
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="role">Software Development Engineer in Test (SDET)</span>
+              <span class="date">Sep 2021 – Present</span>
+            </div>
+            <div class="company">PayPay Corporation · Tokyo, Japan</div>
+            <ul>
+              <li>Part of the AutoQA team — building and maintaining automation tooling that helps reduce manual QA work across product teams.</li>
+              <li>Work across Mobile (Appium), API, and Web (Selenium) automation frameworks, keeping them stable and up to date.</li>
+              <li>Improved CI/CD pipelines using GitHub Actions — faster runs, better reliability, and parallel test execution.</li>
+              <li>Experimenting with LLM-based tools for test case generation and early steps toward self-healing test frameworks.</li>
+              <li>Work closely with global and Japanese teams to coordinate releases and maintain test coverage.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="role">Senior Software Development Engineer in Test</span>
+              <span class="date">Oct 2019 – Aug 2021</span>
+            </div>
+            <div class="company">Qualitest Group · Bengaluru, India</div>
+            <ul>
+              <li>Built and maintained a Hybrid Automation Framework (Java, Selenium, Rest-Assured) covering UI and REST API testing for SiriusXM, a large US media client.</li>
+              <li>Set up and managed Jenkins CI pipelines for regression cycles — reduced manual effort by around 60%.</li>
+              <li>Was the main QA contact for the client, handling daily standups and regular status calls with senior stakeholders across time zones.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="role">Test Lead</span>
+              <span class="date">Mar 2018 – Oct 2019</span>
+            </div>
+            <div class="company">HCL Technologies · Bengaluru, India</div>
+            <ul>
+              <li>Built test automation for SOAP webservices and UI flows for a mortgage origination platform used by ING Bank, Australia.</li>
+              <li>Ran Agile/Scrum ceremonies and helped junior engineers get comfortable with the automation framework.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="role">Senior Software Engineer (SDET)</span>
+              <span class="date">Dec 2013 – Feb 2018</span>
+            </div>
+            <div class="company">Larsen &amp; Toubro Infotech (LTI) · Chennai, India</div>
+            <ul>
+              <li>Worked onsite in Tokyo for ~19 months — gathered requirements directly from Japanese client teams at Hitachi.</li>
+              <li>Automated storage monitoring UIs and REST APIs for Hitachi; led a module team of 6 engineers.</li>
+              <li>Built a REST API automation framework using Java, Rest-Assured, and Groovy with TestNG reporting.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="role">Software Engineer</span>
+              <span class="date">Sep 2011 – Nov 2013</span>
+            </div>
+            <div class="company">Xerago · Chennai, India</div>
+            <ul>
+              <li>Built UI components for an insurance portal (Royal Sundaram) using JSP, JavaScript, and jQuery.</li>
+              <li>Worked on REST APIs and database layer; handled bug fixes and feature delivery as part of a small dev team.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
 
 </body>
 </html>
