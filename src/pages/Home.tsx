@@ -5,8 +5,13 @@ import { Button } from "@/components/ui/button";
 import SectionContainer from "@/components/SectionContainer";
 import profileImg from "@/assets/profile.jpg";
 
+const CAREER_START = new Date(2011, 8); // September 2011
+const yearsOfExperience = Math.floor(
+  (Date.now() - CAREER_START.getTime()) / (1000 * 60 * 60 * 24 * 365.25)
+);
+
 const highlights = [
-  { icon: Briefcase, label: "13+ Years Experience", desc: "Mobile, API & Web automation · Framework design" },
+  { icon: Briefcase, label: `${yearsOfExperience}+ Years Experience`, desc: "Mobile, API & Web automation · Framework design" },
   { icon: Code2, label: "Senior SDET", desc: "AutoQA · PayPay Japan · CI/CD optimisation" },
   { icon: PenLine, label: "AI-Driven QA", desc: "RAG, MCP, LLMs · Intelligent & self-healing testing" },
 ];
@@ -23,13 +28,13 @@ const Home = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground font-semibold text-sm tracking-widest uppercase"
           >
-            Senior SDET · AI Engineer · 13+ Years of Experience
+            Senior SDET · AI Engineer · {yearsOfExperience}+ Years of Experience
           </motion.p>
           <h1 className="page-title">
             Hi, I'm <span className="text-accent">Mohammad Iqbal</span>
           </h1>
           <p className="page-subtitle mx-auto md:mx-0">
-            I help engineering teams ship faster and with greater confidence — combining 13+ years of QA expertise with AI engineering to build intelligent, self-healing automation frameworks at PayPay Japan.
+            I help engineering teams ship faster and with greater confidence — combining {yearsOfExperience}+ years of QA expertise with AI engineering to build intelligent, self-healing automation frameworks at PayPay Japan.
           </p>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
