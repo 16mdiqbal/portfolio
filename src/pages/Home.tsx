@@ -58,7 +58,7 @@ const Home = () => {
           className="shrink-0"
         >
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-accent/20 ring-offset-4 ring-offset-background">
-            <img src={profileImg} alt="Profile" className="w-full h-full object-cover scale-[1.18] object-top" />
+            <img src={profileImg} alt="Mohammad Iqbal — Senior SDET & AI Engineer" className="w-full h-full object-cover scale-[1.18] object-top" />
           </div>
         </motion.div>
       </div>
