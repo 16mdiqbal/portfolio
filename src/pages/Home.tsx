@@ -59,7 +59,7 @@ const Home = () => {
           className="shrink-0"
         >
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-accent/20 ring-offset-4 ring-offset-background">
-            <img src={profileImg} alt="Mohammad Iqbal — Senior SDET & AI Engineer" className="w-full h-full object-cover scale-[1.18] object-top" />
+            <img src={profileImg} alt="Mohammad Iqbal — Senior SDET & AI Engineer" className="w-full h-full object-cover scale-[1.18] object-top" fetchPriority="high" loading="eager" />
           </div>
         </motion.div>
       </div>
@@ -77,7 +77,7 @@ const Home = () => {
             <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10 text-accent">
               <h.icon size={20} />
             </div>
-            <h3 className="font-display text-lg">{h.label}</h3>
+            <p className="font-display text-lg">{h.label}</p>
             <p className="text-sm text-muted-foreground">{h.desc}</p>
           </motion.div>
         ))}
