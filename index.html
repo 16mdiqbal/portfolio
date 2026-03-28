@@ -30,8 +30,7 @@
       (function() {
         var redirect = new URLSearchParams(window.location.search).get('p');
         if (redirect) {
-          var base = window.location.pathname.replace(/\/$/, '');
-          window.history.replaceState(null, '', base + redirect);
+          window.history.replaceState(null, '', redirect);
         }
       })();
     </script>
