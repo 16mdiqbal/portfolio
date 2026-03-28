@@ -11,26 +11,10 @@ export interface BlogEntry {
 export const blogEntries: BlogEntry[] = [
   {
     id: "blog-1",
-    title: "Self-Healing Test Automation with LLMs",
-    excerpt: "How I leveraged large language models to build a self-healing Selenium framework that automatically detects and repairs broken locators — cutting flaky test failures by over 60%.",
+    title: "Python 3.14: Cool New Features for You to Try",
+    excerpt: "Python 3.14 is evolution, not just performance gains. Smarter annotations, multiple interpreters for concurrency, template string literals, faster execution, friendlier error messages, and a revamped interactive REPL — making Python more polished, capable, and future-ready than ever.",
     platform: "LinkedIn",
-    date: "2025-11-10",
-    url: "https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/",
-  },
-  {
-    id: "blog-2",
-    title: "Integrating RAG into Your QA Workflow",
-    excerpt: "A practical guide to building a Retrieval-Augmented Generation pipeline on top of your internal QA documentation — enabling natural language queries over test plans, defect history, and runbooks.",
-    platform: "LinkedIn",
-    date: "2025-09-05",
-    url: "https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/",
-  },
-  {
-    id: "blog-3",
-    title: "Optimising CI/CD Pipelines for Large Test Suites",
-    excerpt: "Strategies I've applied at PayPay Japan to dramatically reduce pipeline run times — intelligent test selection, parallelisation, and smarter caching with GitHub Actions.",
-    platform: "LinkedIn",
-    date: "2025-06-18",
-    url: "https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/",
+    date: "2025-10-15",
+    url: "https://www.linkedin.com/posts/mohammad-iqbal-ai-engineer_python-314-cool-new-features-for-you-to-activity-7384211569498300416-MoX5",
   },
 ];
