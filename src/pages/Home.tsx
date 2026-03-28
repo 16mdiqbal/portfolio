@@ -30,6 +30,7 @@ const Home = () => {
           >
             Senior SDET · AI Engineer · {yearsOfExperience}+ Years of Experience
           </motion.p>
+          <div className="accent-line" />
           <h1 className="page-title">
             Hi, I'm <span className="text-accent">Mohammad Iqbal</span>
           </h1>
