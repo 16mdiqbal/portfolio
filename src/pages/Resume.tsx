@@ -1,4 +1,4 @@
-import { Download, FileText } from "lucide-react";
+import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionContainer from "@/components/SectionContainer";
 
@@ -30,17 +30,6 @@ const Resume = () => {
             title="Resume"
             className="w-full h-full border-0"
           />
-        </div>
-        {/* Fallback for browsers that don't support PDF embed */}
-        <div className="p-6 border-t flex items-center gap-3 text-sm text-muted-foreground">
-          <FileText size={16} />
-          <span>
-            Can't see the resume?{" "}
-            <a href={RESUME_PDF_PATH} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              Open it directly
-            </a>{" "}
-            or use the download button above.
-          </span>
         </div>
       </div>
     </SectionContainer>
