@@ -30,7 +30,8 @@
       (function() {
         var redirect = new URLSearchParams(window.location.search).get('p');
         if (redirect) {
-          window.history.replaceState(null, '', '/portfolio' + redirect);
+          var base = window.location.pathname.replace(/\/$/, '');
+          window.history.replaceState(null, '', base + redirect);
         }
       })();
     </script>
