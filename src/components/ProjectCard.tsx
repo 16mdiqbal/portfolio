@@ -1,6 +1,24 @@
 import type { Project } from "@/data/projects";
 import { ExternalLink, GitBranch } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {
+  SiPython, SiSelenium, SiOpenai, SiLangchain, SiGithubactions,
+  SiHuggingface, SiFastapi, SiDocker, SiTypescript, SiJavascript,
+} from "react-icons/si";
+import type { IconType } from "react-icons";
+
+const techIconMap: Record<string, { icon: IconType; color: string }> = {
+  "Python":         { icon: SiPython,        color: "#3776AB" },
+  "Selenium":       { icon: SiSelenium,      color: "#43B02A" },
+  "OpenAI API":     { icon: SiOpenai,        color: "#412991" },
+  "LangChain":      { icon: SiLangchain,     color: "#1C3C3C" },
+  "GitHub Actions": { icon: SiGithubactions, color: "#2088FF" },
+  "Hugging Face":   { icon: SiHuggingface,   color: "#FFD21E" },
+  "FastAPI":        { icon: SiFastapi,       color: "#009688" },
+  "Docker":         { icon: SiDocker,        color: "#2496ED" },
+  "TypeScript":     { icon: SiTypescript,    color: "#3178C6" },
+  "JavaScript":     { icon: SiJavascript,    color: "#F7DF1E" },
+};
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -24,11 +42,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
 
         <div className="flex flex-wrap gap-2">
-          {project.techStack.map((tech) => (
-            <Badge key={tech} variant="secondary" className="text-xs font-medium">
-              {tech}
-            </Badge>
-          ))}
+          {project.techStack.map((tech) => {
+            const entry = techIconMap[tech];
+            const Icon = entry?.icon;
+            return (
+              <Badge key={tech} variant="secondary" className="text-xs font-medium flex items-center gap-1.5 px-2.5 py-1">
+                {Icon && <Icon style={{ color: entry.color }} size={13} />}
+                {tech}
+              </Badge>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-3 pt-2">
