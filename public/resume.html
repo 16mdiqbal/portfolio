@@ -11,10 +11,10 @@
       font-family: 'Segoe UI', Arial, sans-serif;
       font-size: 13px;
       color: #1f1815;
-      background: #fff;
+      background: #fafaf9;
       padding: 40px 52px;
       line-height: 1.6;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
@@ -23,49 +23,104 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding-bottom: 16px;
-      border-bottom: 2.5px solid #ff8533;
-      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #ff8533;
+      margin-bottom: 26px;
     }
     .header-left h1 {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #1f1815;
     }
     .header-left .title {
-      font-size: 13.5px;
+      font-size: 13px;
       color: #ff8533;
       font-weight: 600;
-      margin-top: 4px;
+      margin-top: 5px;
     }
     .header-right {
       text-align: right;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #555;
-      line-height: 1.9;
+      line-height: 2;
+      margin-top: 4px;
     }
-    .header-right a { color: #555; text-decoration: none; }
+    .header-right a {
+      color: #555;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
     .header-right a:hover { color: #ff8533; }
+    .header-right .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+    }
+    .header-right svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
 
     /* ── Section ── */
-    section { margin-bottom: 20px; }
+    section { margin-bottom: 24px; }
     .section-title {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       color: #ff8533;
-      border-bottom: 1px solid #f0e8e2;
-      padding-bottom: 4px;
-      margin-bottom: 12px;
+      background: #fff8f4;
+      border-left: 3px solid #ff8533;
+      padding: 5px 10px;
+      margin-bottom: 14px;
     }
 
     /* ── Summary ── */
-    .summary p { color: #333; font-size: 13px; }
+    .summary-box {
+      background: #fff8f4;
+      border: 1px solid #ffe0c8;
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .summary-box p { color: #333; font-size: 12.5px; line-height: 1.7; }
 
-    /* ── Experience ── */
-    .entry { margin-bottom: 16px; }
+    /* ── Experience Timeline ── */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 6px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #ff8533, #ffd0b0, #f0e8e2);
+    }
+    .entry {
+      position: relative;
+      margin-bottom: 22px;
+    }
+    .entry:last-child { margin-bottom: 0; }
+    .entry::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background: #ff8533;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #ff8533;
+    }
     .entry-header {
       display: flex;
       justify-content: space-between;
@@ -78,64 +133,95 @@
       color: #1f1815;
     }
     .entry-header .date {
-      font-size: 11.5px;
-      color: #888;
+      font-size: 11px;
+      color: #ff8533;
       white-space: nowrap;
       flex-shrink: 0;
+      font-weight: 600;
+      background: #fff8f4;
+      border: 1px solid #ffe0c8;
+      border-radius: 20px;
+      padding: 1px 9px;
     }
     .entry .company {
-      font-size: 12.5px;
-      color: #ff8533;
+      font-size: 12px;
+      color: #666;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      margin-top: 2px;
     }
     .entry ul {
-      padding-left: 16px;
-      color: #333;
+      padding-left: 14px;
+      color: #3a3a3a;
     }
     .entry ul li {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       font-size: 12.5px;
+      line-height: 1.55;
     }
 
     /* ── Skills ── */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px 24px;
+      gap: 14px 28px;
     }
     .skill-group dt {
       font-weight: 700;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #1f1815;
-      margin-bottom: 2px;
+      margin-bottom: 6px;
     }
-    .skill-group dd { color: #444; font-size: 12px; }
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .chip {
+      background: #fff;
+      color: #444;
+      border: 1px solid #e0d8d2;
+      border-radius: 20px;
+      padding: 2px 9px;
+      font-size: 11px;
+    }
 
     /* ── Education ── */
     .edu-entry {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      position: relative;
+      padding-left: 28px;
+    }
+    .edu-entry::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background: #ff8533;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #ff8533;
     }
     .edu-entry .degree { font-weight: 700; font-size: 13px; }
-    .edu-entry .year { color: #888; font-size: 12px; white-space: nowrap; }
-    .edu-entry .school { color: #ff8533; font-size: 12.5px; font-weight: 600; margin-top: 2px; }
-
-    /* ── Tag pills ── */
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-    .tag {
-      background: #fff4ee;
-      color: #cc5500;
-      border: 1px solid #ffd0b0;
-      border-radius: 4px;
-      padding: 2px 8px;
+    .edu-entry .year {
       font-size: 11px;
-      font-weight: 500;
+      color: #ff8533;
+      white-space: nowrap;
+      font-weight: 600;
+      background: #fff8f4;
+      border: 1px solid #ffe0c8;
+      border-radius: 20px;
+      padding: 1px 9px;
     }
+    .edu-entry .school { color: #666; font-size: 12px; font-weight: 600; margin-top: 2px; }
 
-    @media print {
-      body { padding: 20px 32px; }
+@media print {
+      body { padding: 20px 32px; background: #fff; }
+      .entry::before { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
     }
   </style>
 </head>
@@ -148,25 +234,40 @@
       <div class="title">Senior SDET &amp; AI Engineer · Chiyoda, Tokyo, Japan</div>
     </div>
     <div class="header-right">
-      <div><a href="mailto:16.mdiqbal@gmail.com">16.mdiqbal@gmail.com</a></div>
-      <div><a href="https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/" target="_blank">linkedin.com/in/mohammad-iqbal-ai-engineer</a></div>
-      <div><a href="https://github.com/16mdiqbal" target="_blank">github.com/16mdiqbal</a></div>
-      <div><a href="https://16mdiqbal.github.io/portfolio/" target="_blank">16mdiqbal.github.io/portfolio</a></div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:16.mdiqbal@gmail.com">16.mdiqbal@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/" target="_blank">linkedin.com/in/mohammad-iqbal-ai-engineer</a>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.49 2.87 8.31 6.84 9.65.5.09.68-.22.68-.49v-1.7C6.73 20.3 6.14 18.36 6.14 18.36c-.46-1.18-1.12-1.5-1.12-1.5-.91-.63.07-.61.07-.61 1.01.07 1.54 1.05 1.54 1.05.9 1.55 2.36 1.1 2.93.84.09-.66.35-1.1.64-1.35-2.24-.26-4.59-1.13-4.59-5.04 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.04a9.4 9.4 0 0 1 2.5-.34c.85 0 1.7.11 2.5.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.4.2 2.44.1 2.7.64.71 1.03 1.62 1.03 2.73 0 3.92-2.36 4.78-4.61 5.03.36.31.68.93.68 1.88v2.78c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+        <a href="https://github.com/16mdiqbal" target="_blank">github.com/16mdiqbal</a>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <a href="https://16mdiqbal.github.io/portfolio/" target="_blank">16mdiqbal.github.io/portfolio</a>
+      </div>
     </div>
   </header>
 
   <!-- Summary -->
   <section class="summary">
     <div class="section-title">Professional Summary</div>
-    <p>
-      Senior SDET with 14+ years of experience building automation frameworks across Mobile, API, and Web platforms. At PayPay Japan, I work within the AutoQA team — designing tooling, improving CI/CD pipelines, and helping product teams ship with confidence. Over the past couple of years, I've been deliberately moving toward AI-driven QA — experimenting with LLMs and LangChain to make test automation smarter, from automated test generation to early foundations of self-healing frameworks.
-    </p>
+    <div class="summary-box">
+      <p>
+        Senior SDET with 14+ years of experience building automation frameworks across Mobile, API, and Web platforms. At PayPay Japan, I work within the AutoQA team — designing tooling, improving CI/CD pipelines, and helping product teams ship with confidence. Over the past couple of years, I've been deliberately moving toward AI-driven QA — experimenting with LLMs and LangChain to make test automation smarter, from automated test generation to early foundations of self-healing frameworks.
+      </p>
+    </div>
   </section>
 
   <!-- Experience -->
   <section>
     <div class="section-title">Experience</div>
 
+    <div class="timeline">
     <div class="entry">
       <div class="entry-header">
         <span class="role">Software Development Engineer in Test (SDET)</span>
@@ -231,6 +332,7 @@
         <li>Worked on REST APIs and database layer; handled bug fixes and feature delivery as part of a small dev team.</li>
       </ul>
     </div>
+    </div><!-- end timeline -->
   </section>
 
   <!-- Skills -->
@@ -239,19 +341,47 @@
     <dl class="skills-grid">
       <div class="skill-group">
         <dt>Automation &amp; QA</dt>
-        <dd>Selenium, Appium, Cucumber (BDD), TestNG, JUnit, Rest-Assured, API Testing, Page Object Model, Hybrid Framework Design</dd>
+        <div class="skill-chips">
+          <span class="chip">Selenium</span>
+          <span class="chip">Appium</span>
+          <span class="chip">Cucumber (BDD)</span>
+          <span class="chip">TestNG</span>
+          <span class="chip">JUnit</span>
+          <span class="chip">Rest-Assured</span>
+          <span class="chip">Page Object Model</span>
+          <span class="chip">Hybrid Framework</span>
+        </div>
       </div>
       <div class="skill-group">
         <dt>AI &amp; Machine Learning</dt>
-        <dd>LLMs, RAG, MCP, LangChain, OpenAI API, Hugging Face, Prompt Engineering, AI-Augmented Testing</dd>
+        <div class="skill-chips">
+          <span class="chip">LLMs</span>
+          <span class="chip">RAG</span>
+          <span class="chip">MCP</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">OpenAI API</span>
+          <span class="chip">Hugging Face</span>
+          <span class="chip">Prompt Engineering</span>
+        </div>
       </div>
       <div class="skill-group">
         <dt>DevOps &amp; CI/CD</dt>
-        <dd>GitHub Actions, Jenkins, Docker, Maven, Git, Bitbucket</dd>
+        <div class="skill-chips">
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">Jenkins</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Maven</span>
+          <span class="chip">Git</span>
+          <span class="chip">Bitbucket</span>
+        </div>
       </div>
       <div class="skill-group">
         <dt>Languages</dt>
-        <dd>Java (Expert), Python (Proficient), TypeScript</dd>
+        <div class="skill-chips">
+          <span class="chip">Java (Expert)</span>
+          <span class="chip">Python (Proficient)</span>
+          <span class="chip">TypeScript</span>
+        </div>
       </div>
     </dl>
   </section>
@@ -268,20 +398,6 @@
     </div>
   </section>
 
-  <!-- Currently Exploring -->
-  <section>
-    <div class="section-title">Currently Exploring</div>
-    <div class="tags">
-      <span class="tag">LLMs</span>
-      <span class="tag">RAG</span>
-      <span class="tag">MCP</span>
-      <span class="tag">LangChain</span>
-      <span class="tag">MLOps</span>
-      <span class="tag">Self-Healing Test Frameworks</span>
-      <span class="tag">AI-Augmented Testing</span>
-      <span class="tag">Hugging Face</span>
-    </div>
-  </section>
 
 </body>
 </html>
