@@ -60,8 +60,21 @@ The `public/404.html` handles SPA routing on GitHub Pages by redirecting unknown
 
 - **Contact form**: Formspree (`xpqowvbe`) via `@formspree/react`
 - **Calendar booking**: Calendly at `https://calendly.com/16-mdiqbal`
-- **Resume**: `public/resume.html` — HTML placeholder, update to `public/resume.pdf` when ready
+- **Resume embed**: `public/resume-embed.html` — standalone two-column HTML resume (sidebar: skills/education, main: summary/experience). Do NOT name it `resume.html` — GitHub Pages would serve it directly at `/resume`, bypassing the React app and breaking the portfolio resume page on refresh.
+- **Resume PDF**: `public/resume.pdf` — auto-generated from `resume-embed.html` via Puppeteer on every deploy (`scripts/generate-resume-pdf.mjs`). Never manually edit the PDF — edit `resume-embed.html` and push; the PDF regenerates automatically.
+
+## Resume PDF auto-generation
+
+The GitHub Actions workflow (`deploy.yml`) runs `node scripts/generate-resume-pdf.mjs` after `npm run build`. This opens `resume-embed.html` in headless Chrome (Puppeteer), exports it as A4 PDF, and saves to both `dist/resume.pdf` (deployed) and `public/resume.pdf` (committed to repo for local dev). Puppeteer is a `devDependency` — installed via `npm ci`.
+
+**When updating the resume**: edit `public/resume-embed.html` and push. The PDF auto-updates on deploy. Run `node scripts/generate-resume-pdf.mjs` locally to preview before pushing.
+
+## GitHub Pages gotchas
+
+- **Favicon paths**: Use `%BASE_URL%favicon.svg` in `index.html` (not `/favicon.svg`) — absolute paths resolve to the root domain, missing the `/portfolio/` prefix.
+- **File naming**: Do not place files in `public/` whose name matches a React route (e.g. `resume.html` conflicts with `/resume`). GitHub Pages serves `.html` files directly, bypassing SPA routing on refresh.
+- **SPA routing**: `public/404.html` handles redirects for deep links. The BrowserRouter uses `basename={import.meta.env.BASE_URL.replace(/\/$/, "")}`.
 
 ## Owner profile
 
-Mohammad Iqbal — Senior SDET at PayPay Japan, AI Engineer. 13+ years in software development, automation testing (Mobile, API, Web), and framework design. Currently focused on AI-driven QA: LLMs, RAG, MCP, LangChain, self-healing test frameworks.
+Mohammad Iqbal — Senior SDET at PayPay Japan, AI Engineer. 14+ years in software development, automation testing (Mobile, API, Web), and framework design. Currently exploring AI-driven QA: LLMs, RAG, MCP, LangChain, self-healing test frameworks.
