@@ -8,7 +8,7 @@ const RESUME_EMBED_PATH = `${import.meta.env.BASE_URL}resume.html`;
 
 const Resume = () => {
   return (
-    <SectionContainer className="!py-8 md:!py-10">
+    <SectionContainer>
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
           <h1 className="page-title">Resume</h1>

@@ -92,7 +92,7 @@
 
 @layer components {
   .section-container {
-    @apply max-w-5xl mx-auto px-6 py-16 md:py-24;
+    @apply max-w-5xl mx-auto px-6 py-10 md:py-14;
   }
 
   .page-title {
