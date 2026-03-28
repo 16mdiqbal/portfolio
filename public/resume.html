@@ -5,171 +5,282 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohammad Iqbal — Resume</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       font-size: 13px;
       color: #1f1815;
       background: #fff;
-      padding: 40px 48px;
-      line-height: 1.5;
+      padding: 40px 52px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    /* Header */
-    .header { border-bottom: 2px solid #ff8533; padding-bottom: 16px; margin-bottom: 24px; }
-    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
-    .header .title { font-size: 14px; color: #ff8533; font-weight: 600; margin-top: 4px; }
-    .header .meta { display: flex; gap: 20px; margin-top: 10px; font-size: 12px; color: #555; flex-wrap: wrap; }
-    .header .meta a { color: #555; text-decoration: none; }
-    .header .meta a:hover { color: #ff8533; }
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      border-bottom: 2.5px solid #ff8533;
+      margin-bottom: 22px;
+    }
+    .header-left h1 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1f1815;
+    }
+    .header-left .title {
+      font-size: 13.5px;
+      color: #ff8533;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.9;
+    }
+    .header-right a { color: #555; text-decoration: none; }
+    .header-right a:hover { color: #ff8533; }
 
-    /* Sections */
-    section { margin-bottom: 22px; }
-    h2 {
-      font-size: 11px;
+    /* ── Section ── */
+    section { margin-bottom: 20px; }
+    .section-title {
+      font-size: 10.5px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
       color: #ff8533;
-      margin-bottom: 10px;
-      padding-bottom: 4px;
       border-bottom: 1px solid #f0e8e2;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
     }
 
-    /* Summary */
-    .summary p { color: #333; }
+    /* ── Summary ── */
+    .summary p { color: #333; font-size: 13px; }
 
-    /* Experience */
-    .entry { margin-bottom: 14px; }
-    .entry-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-    .entry-header .role { font-weight: 700; font-size: 13.5px; }
-    .entry-header .date { font-size: 11.5px; color: #777; white-space: nowrap; }
-    .entry .company { font-size: 12.5px; color: #555; margin-bottom: 5px; }
-    .entry ul { padding-left: 16px; color: #333; }
-    .entry ul li { margin-bottom: 3px; }
+    /* ── Experience ── */
+    .entry { margin-bottom: 16px; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .entry-header .role {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #1f1815;
+    }
+    .entry-header .date {
+      font-size: 11.5px;
+      color: #888;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .entry .company {
+      font-size: 12.5px;
+      color: #ff8533;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .entry ul {
+      padding-left: 16px;
+      color: #333;
+    }
+    .entry ul li {
+      margin-bottom: 3px;
+      font-size: 12.5px;
+    }
 
-    /* Skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .skill-group dt { font-weight: 700; font-size: 12px; margin-bottom: 3px; }
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+    .skill-group dt {
+      font-weight: 700;
+      font-size: 12px;
+      color: #1f1815;
+      margin-bottom: 2px;
+    }
     .skill-group dd { color: #444; font-size: 12px; }
 
-    /* Education */
-    .edu-entry { display: flex; justify-content: space-between; }
-    .edu-entry .degree { font-weight: 700; }
-    .edu-entry .year { color: #777; font-size: 12px; }
-    .edu-entry .school { color: #555; font-size: 12px; margin-top: 2px; }
+    /* ── Education ── */
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .edu-entry .degree { font-weight: 700; font-size: 13px; }
+    .edu-entry .year { color: #888; font-size: 12px; white-space: nowrap; }
+    .edu-entry .school { color: #ff8533; font-size: 12.5px; font-weight: 600; margin-top: 2px; }
+
+    /* ── Tag pills ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .tag {
+      background: #fff4ee;
+      color: #cc5500;
+      border: 1px solid #ffd0b0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 500;
+    }
 
     @media print {
-      body { padding: 20px 28px; }
+      body { padding: 20px 32px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="header">
-    <h1>Mohammad Iqbal</h1>
-    <div class="title">Senior Software Development Engineer in Test (SDET) · AI Engineer</div>
-    <div class="meta">
-      <span>📍 Japan</span>
-      <a href="mailto:16.mdiqbal@gmail.com">✉ 16.mdiqbal@gmail.com</a>
-      <a href="https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/" target="_blank">🔗 linkedin.com/in/mohammad-iqbal-ai-engineer</a>
-      <a href="https://github.com/16mdiqbal" target="_blank">🐙 github.com/16mdiqbal</a>
+    <div class="header-left">
+      <h1>Mohammad Iqbal</h1>
+      <div class="title">Senior SDET &amp; AI Engineer · Chiyoda, Tokyo, Japan</div>
+    </div>
+    <div class="header-right">
+      <div><a href="mailto:16.mdiqbal@gmail.com">16.mdiqbal@gmail.com</a></div>
+      <div><a href="https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/" target="_blank">linkedin.com/in/mohammad-iqbal-ai-engineer</a></div>
+      <div><a href="https://github.com/16mdiqbal" target="_blank">github.com/16mdiqbal</a></div>
+      <div><a href="https://16mdiqbal.github.io/portfolio/" target="_blank">16mdiqbal.github.io/portfolio</a></div>
     </div>
   </header>
 
+  <!-- Summary -->
   <section class="summary">
-    <h2>Professional Summary</h2>
+    <div class="section-title">Professional Summary</div>
     <p>
-      Quality engineering leader with 13+ years of experience in software development and automation testing. Specialises in solving complex QA challenges, building intelligent test automation frameworks, and optimising CI/CD pipelines. Currently expanding expertise into AI Engineering — integrating LLMs, RAG, and MLOps into testing workflows to deliver self-healing, data-driven automation solutions.
+      Senior SDET with 14+ years of experience building automation frameworks across Mobile, API, and Web platforms. At PayPay Japan, I work within the AutoQA team — designing tooling, improving CI/CD pipelines, and helping product teams ship with confidence. Over the past couple of years, I've been deliberately moving toward AI-driven QA — experimenting with LLMs and LangChain to make test automation smarter, from automated test generation to early foundations of self-healing frameworks.
     </p>
   </section>
 
+  <!-- Experience -->
   <section>
-    <h2>Experience</h2>
+    <div class="section-title">Experience</div>
 
     <div class="entry">
       <div class="entry-header">
-        <span class="role">Senior SDET — AutoQA Team</span>
-        <span class="date">2022 – Present</span>
+        <span class="role">Software Development Engineer in Test (SDET)</span>
+        <span class="date">Sep 2021 – Present</span>
       </div>
-      <div class="company">PayPay Corporation · Japan</div>
+      <div class="company">PayPay Corporation · Tokyo, Japan</div>
       <ul>
-        <li>Design and implement tooling that reduces manual QA effort across multiple product teams.</li>
-        <li>Maintain and enhance automation frameworks for web, mobile, and API test coverage.</li>
-        <li>Optimise CI/CD pipelines (GitHub Actions) for speed, reliability, and test parallelisation.</li>
-        <li>Introduce new QA processes and standards that improve team efficiency and product quality.</li>
-        <li>Collaborate with cross-functional global teams including Japanese client stakeholders.</li>
+        <li>Part of the AutoQA team — building and maintaining automation tooling that helps reduce manual QA work across product teams.</li>
+        <li>Work across Mobile (Appium), API, and Web (Selenium) automation frameworks, keeping them stable and up to date.</li>
+        <li>Improved CI/CD pipelines using GitHub Actions — faster runs, better reliability, and parallel test execution.</li>
+        <li>Experimenting with LLM-based tools for test case generation and early steps toward self-healing test frameworks.</li>
+        <li>Work closely with global and Japanese teams to coordinate releases and maintain test coverage.</li>
       </ul>
     </div>
 
     <div class="entry">
       <div class="entry-header">
-        <span class="role">SDET / Automation Test Engineer</span>
-        <span class="date">2015 – 2022</span>
+        <span class="role">Senior Software Development Engineer in Test</span>
+        <span class="date">Oct 2019 – Aug 2021</span>
       </div>
-      <div class="company">Various Organisations · Global</div>
+      <div class="company">Qualitest Group · Bengaluru, India</div>
       <ul>
-        <li>Built end-to-end automation frameworks using Selenium, Appium, and Cucumber (BDD).</li>
-        <li>Delivered API test automation suites and integrated them into CI pipelines.</li>
-        <li>Worked with diverse global teams under demanding delivery timelines.</li>
-        <li>Mentored junior engineers in test automation best practices.</li>
+        <li>Built and maintained a Hybrid Automation Framework (Java, Selenium, Rest-Assured) covering UI and REST API testing for SiriusXM, a large US media client.</li>
+        <li>Set up and managed Jenkins CI pipelines for regression cycles — reduced manual effort by around 60%.</li>
+        <li>Was the main QA contact for the client, handling daily standups and regular status calls with senior stakeholders across time zones.</li>
       </ul>
     </div>
 
     <div class="entry">
       <div class="entry-header">
-        <span class="role">Software Developer / QA Engineer</span>
-        <span class="date">2012 – 2015</span>
+        <span class="role">Test Lead</span>
+        <span class="date">Mar 2018 – Oct 2019</span>
       </div>
-      <div class="company">Early Career</div>
+      <div class="company">HCL Technologies · Bengaluru, India</div>
       <ul>
-        <li>Contributed to software development and manual/automated QA across multiple projects.</li>
-        <li>Developed foundational expertise in test strategy, defect management, and release cycles.</li>
+        <li>Built test automation for SOAP webservices and UI flows for a mortgage origination platform used by ING Bank, Australia.</li>
+        <li>Ran Agile/Scrum ceremonies and helped junior engineers get comfortable with the automation framework.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Senior Software Engineer (SDET)</span>
+        <span class="date">Dec 2013 – Feb 2018</span>
+      </div>
+      <div class="company">Larsen &amp; Toubro Infotech (LTI) · Chennai, India</div>
+      <ul>
+        <li>Worked onsite in Tokyo for ~19 months — gathered requirements directly from Japanese client teams at Hitachi.</li>
+        <li>Automated storage monitoring UIs and REST APIs for Hitachi; led a module team of 6 engineers.</li>
+        <li>Built a REST API automation framework using Java, Rest-Assured, and Groovy with TestNG reporting.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Software Engineer</span>
+        <span class="date">Sep 2011 – Nov 2013</span>
+      </div>
+      <div class="company">Xerago · Chennai, India</div>
+      <ul>
+        <li>Built UI components for an insurance portal (Royal Sundaram) using JSP, JavaScript, and jQuery.</li>
+        <li>Worked on REST APIs and database layer; handled bug fixes and feature delivery as part of a small dev team.</li>
       </ul>
     </div>
   </section>
 
+  <!-- Skills -->
   <section>
-    <h2>Skills</h2>
+    <div class="section-title">Technical Skills</div>
     <dl class="skills-grid">
       <div class="skill-group">
         <dt>Automation &amp; QA</dt>
-        <dd>Selenium, Appium, Cucumber, TestNG, API Testing, Automation Framework Development</dd>
+        <dd>Selenium, Appium, Cucumber (BDD), TestNG, JUnit, Rest-Assured, API Testing, Page Object Model, Hybrid Framework Design</dd>
       </div>
       <div class="skill-group">
         <dt>AI &amp; Machine Learning</dt>
-        <dd>LLMs, RAG, LangChain, MLOps, OpenAI API, Hugging Face, TensorFlow, Prompt Engineering</dd>
+        <dd>LLMs, RAG, MCP, LangChain, OpenAI API, Hugging Face, Prompt Engineering, AI-Augmented Testing</dd>
       </div>
       <div class="skill-group">
         <dt>DevOps &amp; CI/CD</dt>
-        <dd>GitHub Actions, Docker, CI/CD Pipelines, Git</dd>
+        <dd>GitHub Actions, Jenkins, Docker, Maven, Git, Bitbucket</dd>
       </div>
       <div class="skill-group">
-        <dt>Languages &amp; Frameworks</dt>
-        <dd>Python, Java, TypeScript, React, FastAPI</dd>
+        <dt>Languages</dt>
+        <dd>Java (Expert), Python (Proficient), TypeScript</dd>
       </div>
     </dl>
   </section>
 
+  <!-- Education -->
   <section>
-    <h2>Education</h2>
+    <div class="section-title">Education</div>
     <div class="edu-entry">
       <div>
-        <div class="degree">Bachelor's Degree — Computer Science / Software Engineering</div>
-        <div class="school">University · To be updated</div>
+        <div class="degree">Bachelor of Technology (B.Tech) — Information Technology</div>
+        <div class="school">SRM Institute of Science &amp; Technology</div>
       </div>
-      <div class="year">To be updated</div>
+      <div class="year">2006 – 2010 · 82%</div>
     </div>
   </section>
 
+  <!-- Currently Exploring -->
   <section>
-    <h2>Certifications &amp; Learning</h2>
-    <ul style="padding-left: 16px; color: #333;">
-      <li>AI Engineering — LLMs, RAG, LangChain, MLOps (ongoing)</li>
-      <li>Python for Data Science &amp; Machine Learning</li>
-      <li>Advanced Selenium WebDriver &amp; Automation Frameworks</li>
-    </ul>
+    <div class="section-title">Currently Exploring</div>
+    <div class="tags">
+      <span class="tag">LLMs</span>
+      <span class="tag">RAG</span>
+      <span class="tag">MCP</span>
+      <span class="tag">LangChain</span>
+      <span class="tag">MLOps</span>
+      <span class="tag">Self-Healing Test Frameworks</span>
+      <span class="tag">AI-Augmented Testing</span>
+      <span class="tag">Hugging Face</span>
+    </div>
   </section>
 
 </body>
