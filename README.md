@@ -20,6 +20,8 @@ Personal portfolio of Mohammad Iqbal, Senior SDET & AI Engineer at PayPay Japan.
 - [shadcn/ui](https://ui.shadcn.com/) — UI components
 - [Framer Motion](https://www.framer.com/motion/) — animations
 - [React Router](https://reactrouter.com/) — client-side routing
+- [Fontsource](https://fontsource.org/) — self-hosted fonts (DM Sans, DM Serif Display)
+- [Puppeteer](https://pptr.dev/) — resume PDF generation
 - [Formspree](https://formspree.io/) — contact form
 - [Calendly](https://calendly.com/16-mdiqbal) — meeting booking
 
@@ -41,6 +43,15 @@ The dev server runs at `http://localhost:8080`.
 | `npm run lint` | Run ESLint |
 | `npm run test` | Run tests |
 | `npm run preview` | Preview production build |
+| `node scripts/generate-resume-pdf.mjs` | Generate resume PDF locally from `resume-embed.html` |
+
+## Resume
+
+The resume is maintained as `public/resume-embed.html` (two-column HTML). On every deploy, GitHub Actions runs Puppeteer to auto-generate `resume.pdf` from it. To update the resume, edit `resume-embed.html` and push — the PDF regenerates automatically.
+
+## Dark Mode
+
+Supported via a toggle in the navbar. Preference is persisted to `localStorage`.
 
 ## Deployment
 
