@@ -75,6 +75,65 @@ The GitHub Actions workflow (`deploy.yml`) runs `node scripts/generate-resume-pd
 - **File naming**: Do not place files in `public/` whose name matches a React route (e.g. `resume.html` conflicts with `/resume`). GitHub Pages serves `.html` files directly, bypassing SPA routing on refresh.
 - **SPA routing**: `public/404.html` handles redirects for deep links. The BrowserRouter uses `basename={import.meta.env.BASE_URL.replace(/\/$/, "")}`.
 
+## Adding a project
+
+The Projects page currently shows a "Coming Soon" state. When a real project is ready to add:
+
+1. **Add the project entry** to `src/data/projects.ts`:
+```ts
+{
+  id: "project-1",
+  title: "Your Project Title",
+  description: "A concise 1-2 sentence description of what it does and the problem it solves.",
+  image: "",           // leave empty for auto-generated placeholder, or use a public image URL
+  techStack: ["Python", "FastAPI", "Docker"],  // use exact names from techIconMap in ProjectCard.tsx for logos to appear
+  githubUrl: "https://github.com/16mdiqbal/your-repo",
+  liveUrl: "https://your-demo.com",  // optional, omit if no live demo
+}
+```
+
+2. **Restore the Projects page** — replace `src/pages/Projects.tsx` with the grid layout:
+```tsx
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
+import SectionContainer from "@/components/SectionContainer";
+
+const Projects = () => {
+  return (
+    <SectionContainer>
+      <h1 className="page-title">Projects</h1>
+      <p className="page-subtitle mt-2 mb-4">A selection of things I've built and contributed to.</p>
+      <div className="accent-line mb-10" />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </SectionContainer>
+  );
+};
+
+export default Projects;
+```
+
+3. **Tech stack logos** — `ProjectCard.tsx` has a `techIconMap` with logos for: Python, Selenium, OpenAI API, LangChain, GitHub Actions, Hugging Face, FastAPI, Docker, TypeScript, JavaScript. Techs not in this map render as text-only badges. Add new icons to `techIconMap` from `react-icons/si` if needed.
+
+4. Push and the GitHub Actions workflow deploys automatically.
+
+## Adding a blog post
+
+Add an entry to `src/data/blog.ts`. Most recent post should be first in the array:
+```ts
+{
+  id: "blog-3",
+  title: "Your Post Title",
+  excerpt: "2-3 sentence summary shown on the card.",
+  platform: "LinkedIn",  // or "Medium", "Dev.to", "Hashnode"
+  date: "2026-04-01",
+  url: "https://www.linkedin.com/pulse/your-post-url",
+}
+```
+
 ## Owner profile
 
 Mohammad Iqbal — Senior SDET at PayPay Japan, AI Engineer. 14+ years in software development, automation testing (Mobile, API, Web), and framework design. Currently exploring AI-driven QA: LLMs, RAG, MCP, LangChain, self-healing test frameworks.
