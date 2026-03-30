@@ -77,7 +77,35 @@
     .edu-entry .school { font-size: 10.5pt; color: #444; font-style: italic; }
     .edu-entry .year { font-size: 10pt; color: #444; }
 
+    /* ── Download bar ── */
+    .download-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #1f1815;
+      color: #fff;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      z-index: 100;
+    }
+    .download-bar span { opacity: 0.7; }
+    .download-bar button {
+      background: #ff8533;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .download-bar button:hover { background: #e6731f; }
+    body { padding-top: 56px; }
+
     @media print {
+      .download-bar { display: none; }
       body { padding: 28px 36px; font-size: 10.5pt; }
       .name { font-size: 20pt; }
       section { margin-top: 14px; }
@@ -86,6 +114,12 @@
   </style>
 </head>
 <body>
+
+  <!-- Download bar -->
+  <div class="download-bar">
+    <span>ATS-Optimised Resume — single column, no graphics</span>
+    <button onclick="window.print()">Download as PDF</button>
+  </div>
 
   <!-- Header -->
   <div class="name">Mohammad Iqbal</div>

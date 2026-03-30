@@ -1,9 +1,10 @@
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionContainer from "@/components/SectionContainer";
 
 const RESUME_PDF_PATH = `${import.meta.env.BASE_URL}resume.pdf`;
 const RESUME_EMBED_PATH = `${import.meta.env.BASE_URL}resume-embed.html`;
+const RESUME_ATS_PATH = `${import.meta.env.BASE_URL}resume-ats.html`;
 
 const Resume = () => {
   return (
@@ -13,11 +14,18 @@ const Resume = () => {
           <h1 className="page-title">Resume</h1>
           <p className="page-subtitle mt-2">My professional experience and qualifications.</p>
         </div>
-        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 shrink-0">
-          <a href={RESUME_PDF_PATH} download>
-            <Download size={16} className="mr-2" /> Download PDF
-          </a>
-        </Button>
+        <div className="flex gap-3 flex-wrap">
+          <Button asChild variant="outline" className="shrink-0">
+            <a href={RESUME_ATS_PATH} target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={16} className="mr-2" /> ATS Resume
+            </a>
+          </Button>
+          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 shrink-0">
+            <a href={RESUME_PDF_PATH} download>
+              <Download size={16} className="mr-2" /> Download PDF
+            </a>
+          </Button>
+        </div>
       </div>
 
       <div className="accent-line mb-8" />
