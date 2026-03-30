@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammad Iqbal — Resume</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      color: #111;
+      background: #fff;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 48px;
+    }
+
+    /* ── Header ── */
+    .name {
+      font-size: 24pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #111;
+    }
+    .title {
+      font-size: 11pt;
+      color: #444;
+      margin-top: 2px;
+    }
+    .contact {
+      margin-top: 6px;
+      font-size: 10pt;
+      color: #444;
+    }
+    .contact a { color: #444; text-decoration: none; }
+    .divider {
+      border: none;
+      border-top: 2px solid #111;
+      margin: 14px 0 0;
+    }
+
+    /* ── Section ── */
+    section { margin-top: 18px; }
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #111;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* ── Summary ── */
+    .summary p { font-size: 10.5pt; color: #222; line-height: 1.6; }
+
+    /* ── Experience ── */
+    .entry { margin-bottom: 14px; }
+    .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .entry-header .role { font-weight: 700; font-size: 11pt; }
+    .entry-header .date { font-size: 10pt; color: #444; }
+    .entry .company { font-size: 10.5pt; color: #444; font-style: italic; margin-bottom: 5px; }
+    .entry ul { padding-left: 18px; }
+    .entry ul li { font-size: 10.5pt; margin-bottom: 3px; line-height: 1.5; }
+
+    /* ── Skills ── */
+    .skill-row { margin-bottom: 5px; font-size: 10.5pt; }
+    .skill-row strong { color: #111; }
+
+    /* ── Education ── */
+    .edu-entry { margin-bottom: 8px; }
+    .edu-entry .degree { font-weight: 700; font-size: 11pt; }
+    .edu-entry .school { font-size: 10.5pt; color: #444; font-style: italic; }
+    .edu-entry .year { font-size: 10pt; color: #444; }
+
+    @media print {
+      body { padding: 28px 36px; font-size: 10.5pt; }
+      .name { font-size: 20pt; }
+      section { margin-top: 14px; }
+      .entry { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="name">Mohammad Iqbal</div>
+  <div class="title">Senior SDET &amp; AI Engineer · Chiyoda, Tokyo, Japan</div>
+  <div class="contact">
+    16.mdiqbal@gmail.com &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/mohammad-iqbal-ai-engineer/">linkedin.com/in/mohammad-iqbal-ai-engineer</a> &nbsp;|&nbsp;
+    <a href="https://github.com/16mdiqbal">github.com/16mdiqbal</a> &nbsp;|&nbsp;
+    <a href="https://16mdiqbal.github.io/portfolio/">16mdiqbal.github.io/portfolio</a>
+  </div>
+  <hr class="divider" />
+
+  <!-- Summary -->
+  <section class="summary">
+    <div class="section-title">Professional Summary</div>
+    <p>
+      Senior SDET with 14+ years of experience building automation frameworks across Mobile, API, and Web platforms. At PayPay Japan, I work within the AutoQA team — designing tooling, improving CI/CD pipelines, and helping product teams ship with confidence. Over the past couple of years, I've been deliberately moving toward AI-driven QA — experimenting with LLMs and LangChain to make test automation smarter, from automated test generation to early foundations of self-healing frameworks.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <div class="section-title">Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Software Development Engineer in Test (SDET)</span>
+        <span class="date">Sep 2021 – Present</span>
+      </div>
+      <div class="company">PayPay Corporation · Tokyo, Japan</div>
+      <ul>
+        <li>Part of the AutoQA team — building and maintaining automation tooling that helps reduce manual QA work across product teams.</li>
+        <li>Work across Mobile (Appium), API, and Web (Selenium) automation frameworks, keeping them stable and up to date.</li>
+        <li>Improved CI/CD pipelines using GitHub Actions — faster runs, better reliability, and parallel test execution.</li>
+        <li>Experimenting with LLM-based tools for test case generation and early steps toward self-healing test frameworks.</li>
+        <li>Work closely with global and Japanese teams to coordinate releases and maintain test coverage.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Senior Software Development Engineer in Test</span>
+        <span class="date">Oct 2019 – Aug 2021</span>
+      </div>
+      <div class="company">Qualitest Group · Bengaluru, India</div>
+      <ul>
+        <li>Built and maintained a Hybrid Automation Framework (Java, Selenium, Rest-Assured) covering UI and REST API testing for SiriusXM, a large US media client.</li>
+        <li>Set up and managed Jenkins CI pipelines for regression cycles — reduced manual effort by around 60%.</li>
+        <li>Was the main QA contact for the client, handling daily standups and regular status calls with senior stakeholders across time zones.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Test Lead</span>
+        <span class="date">Mar 2018 – Oct 2019</span>
+      </div>
+      <div class="company">HCL Technologies · Bengaluru, India</div>
+      <ul>
+        <li>Built test automation for SOAP webservices and UI flows for a mortgage origination platform used by ING Bank, Australia.</li>
+        <li>Ran Agile/Scrum ceremonies and helped junior engineers get comfortable with the automation framework.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Senior Software Engineer (SDET)</span>
+        <span class="date">Dec 2013 – Feb 2018</span>
+      </div>
+      <div class="company">Larsen &amp; Toubro Infotech (LTI) · Chennai, India</div>
+      <ul>
+        <li>Worked onsite in Tokyo for ~19 months — gathered requirements directly from Japanese client teams at Hitachi.</li>
+        <li>Automated storage monitoring UIs and REST APIs for Hitachi; led a module team of 6 engineers.</li>
+        <li>Built a REST API automation framework using Java, Rest-Assured, and Groovy with TestNG reporting.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="role">Software Engineer</span>
+        <span class="date">Sep 2011 – Nov 2013</span>
+      </div>
+      <div class="company">Xerago · Chennai, India</div>
+      <ul>
+        <li>Built UI components for an insurance portal (Royal Sundaram) using JSP, JavaScript, and jQuery.</li>
+        <li>Worked on REST APIs and database layer; handled bug fixes and feature delivery as part of a small dev team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <div class="section-title">Technical Skills</div>
+    <div class="skill-row"><strong>Automation &amp; QA:</strong> Selenium, Playwright, Appium, Cucumber, TestNG, JUnit, Rest-Assured, Page Object Model</div>
+    <div class="skill-row"><strong>AI &amp; Machine Learning:</strong> LLMs, RAG, MCP, LangChain, OpenAI API, Hugging Face, FastAPI, Prompt Engineering</div>
+    <div class="skill-row"><strong>DevOps &amp; CI/CD:</strong> GitHub Actions, Jenkins, CircleCI, Docker, Maven, Git</div>
+    <div class="skill-row"><strong>Languages:</strong> Java (Expert), Python (Proficient), TypeScript (Basic)</div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <div class="section-title">Education</div>
+    <div class="edu-entry">
+      <div class="degree">B.Tech — Information Technology</div>
+      <div class="school">SRM Institute of Science &amp; Technology</div>
+      <div class="year">2006 – 2010 · 82%</div>
+    </div>
+  </section>
+
+</body>
+</html>
