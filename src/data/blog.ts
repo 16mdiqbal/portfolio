@@ -10,6 +10,14 @@ export interface BlogEntry {
 // Add your blog entries here. Each entry becomes a card on the Blog page.
 export const blogEntries: BlogEntry[] = [
   {
+    id: "blog-3",
+    title: "RAG Explained: Why Modern AI Needs More Than a Good Memory",
+    excerpt: "LLMs have a knowledge cutoff, hallucinate, and can't access your private data — four critical limitations that make them unreliable in production. RAG fixes this by retrieving relevant context first, then generating grounded responses, giving AI systems access to up-to-date information and making enterprise AI actually trustworthy.",
+    platform: "LinkedIn",
+    date: "2026-05-09",
+    url: "https://www.linkedin.com/pulse/rag-explained-why-modern-ai-needs-more-than-good-memory-iqbal-egipc/",
+  },
+  {
     id: "blog-2",
     title: "Stop Wasting Your AI's 'Working Memory'",
     excerpt: "Claude Code's 200k token context window sounds generous — but system overhead leaves only ~150k usable tokens. Worse, conversation history is resent every turn, so costs grow exponentially. Four focused 10-turn sessions cost ~4x less than one 40-turn marathon. Here's how to work smarter.",
