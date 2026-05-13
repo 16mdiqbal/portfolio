@@ -7,6 +7,11 @@ const iconMap: Record<string, React.ElementType> = {
   ExternalLink,
 };
 
+const iconColorMap: Record<string, string> = {
+  Github:   "text-[#181717] dark:text-[#e6edf3] hover:opacity-80",
+  Linkedin: "text-[#0A66C2] hover:opacity-80",
+};
+
 const Footer = () => {
   return (
     <footer className="border-t">
@@ -23,7 +28,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className={`transition-opacity ${iconColorMap[link.icon] ?? "text-muted-foreground hover:text-foreground"}`}
                 aria-label={link.platform}
               >
                 <Icon size={18} />

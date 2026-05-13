@@ -5,6 +5,9 @@ export interface BlogEntry {
   platform: "Medium" | "LinkedIn" | "Dev.to" | "Hashnode" | "Personal" | string;
   date?: string;
   url: string;
+  tags?: string[];
+  readTime?: number;
+  difficulty?: "Beginner" | "Intermediate" | "Advanced";
 }
 
 // Add your blog entries here. Each entry becomes a card on the Blog page.
@@ -16,6 +19,9 @@ export const blogEntries: BlogEntry[] = [
     platform: "LinkedIn",
     date: "2026-05-12",
     url: "https://www.linkedin.com/pulse/langchain-document-loaders-first-step-every-rag-pipeline-iqbal-96vac",
+    tags: ["Document Loaders", "LangChain", "RAG"],
+    readTime: 7,
+    difficulty: "Intermediate",
   },
   {
     id: "blog-3",
@@ -24,6 +30,9 @@ export const blogEntries: BlogEntry[] = [
     platform: "LinkedIn",
     date: "2026-05-09",
     url: "https://www.linkedin.com/pulse/rag-explained-why-modern-ai-needs-more-than-good-memory-iqbal-egipc/",
+    tags: ["RAG", "AI", "LLM"],
+    readTime: 8,
+    difficulty: "Beginner",
   },
   {
     id: "blog-2",
@@ -32,6 +41,9 @@ export const blogEntries: BlogEntry[] = [
     platform: "LinkedIn",
     date: "2026-03-28",
     url: "https://www.linkedin.com/pulse/stop-wasting-your-ais-working-memory-mohammad-iqbal-xnyyc",
+    tags: ["Context Window", "Claude Code", "AI"],
+    readTime: 5,
+    difficulty: "Beginner",
   },
   {
     id: "blog-1",
@@ -40,5 +52,8 @@ export const blogEntries: BlogEntry[] = [
     platform: "LinkedIn",
     date: "2025-10-15",
     url: "https://www.linkedin.com/posts/mohammad-iqbal-ai-engineer_python-314-cool-new-features-for-you-to-activity-7384211569498300416-MoX5",
+    tags: ["Python 3.14", "Python"],
+    readTime: 6,
+    difficulty: "Beginner",
   },
 ];

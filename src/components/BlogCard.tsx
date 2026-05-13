@@ -1,43 +1,108 @@
 import type { BlogEntry } from "@/data/blog";
-import { ArrowUpRight, Calendar } from "lucide-react";
+import { ArrowUpRight, Calendar, Clock, Bot, Database, Layers } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { SiPython, SiLangchain, SiOpenai } from "react-icons/si";
+import type { IconType } from "react-icons";
+import type { LucideIcon } from "lucide-react";
 
-const platformColors: Record<string, string> = {
-  Medium: "bg-foreground text-background",
-  LinkedIn: "bg-accent text-accent-foreground",
-  "Dev.to": "bg-foreground text-background",
-  Hashnode: "bg-[hsl(230,70%,55%)] text-accent-foreground",
+type AnyIcon = IconType | LucideIcon;
+
+const tagIconMap: Record<string, AnyIcon> = {
+  "Document Loaders": SiLangchain,
+  "LangChain":        SiLangchain,
+  "RAG":              Database,
+  "AI":               SiOpenai,
+  "LLM":              SiOpenai,
+  "Claude Code":      Bot,
+  "Context Window":   Layers,
+  "Productivity":     Database,
+  "Python 3.14":      SiPython,
+  "Python":           SiPython,
+};
+
+const difficultyStyle: Record<string, string> = {
+  Beginner:     "text-green-600 dark:text-green-400",
+  Intermediate: "text-amber-600 dark:text-amber-400",
+  Advanced:     "text-red-600 dark:text-red-400",
 };
 
 const BlogCard = ({ entry }: { entry: BlogEntry }) => {
+  const primaryTag = entry.tags?.[0];
+  const secondaryTags = entry.tags?.slice(1) ?? [];
+  const Icon = primaryTag ? tagIconMap[primaryTag] : undefined;
+
   return (
     <a
       href={entry.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl border-l-4 border-l-accent border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-l-accent hover:border-accent/30"
+      className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_28px_hsl(var(--accent)/0.13)] hover:border-accent/25"
     >
-      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
-        <h3 className="font-display text-xl group-hover:text-accent transition-colors">
+      {/* Accent stripe */}
+      <div className="h-[3px] bg-accent transition-all duration-300 group-hover:bg-accent/80" />
+
+      <div className="flex flex-col flex-1 p-5 gap-3">
+
+        {/* Primary tag with icon */}
+        {primaryTag && (
+          <div className="flex items-center gap-1.5">
+            {Icon && <Icon size={16} className="text-accent shrink-0" />}
+            <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+              {primaryTag}
+            </span>
+          </div>
+        )}
+
+        {/* Title */}
+        <h3 className="font-display text-xl leading-snug group-hover:text-accent transition-colors duration-200">
           {entry.title}
         </h3>
-        <span className="hidden sm:flex items-center gap-1 text-xs text-muted-foreground group-hover:text-accent transition-colors shrink-0">
-          Read on {entry.platform} <ArrowUpRight size={14} />
-        </span>
-      </div>
 
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{entry.excerpt}</p>
+        {/* Excerpt */}
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 flex-1">
+          {entry.excerpt}
+        </p>
 
-      <div className="flex items-center gap-3">
-        <Badge className={`text-xs ${platformColors[entry.platform] || "bg-secondary text-secondary-foreground"}`}>
-          {entry.platform}
-        </Badge>
-        {entry.date && (
-          <span className="flex items-center gap-1 text-xs text-muted-foreground">
-            <Calendar size={12} />
-            {new Date(entry.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-          </span>
+        {/* Secondary tags */}
+        {secondaryTags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {secondaryTags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs px-2 py-0.5 font-normal">
+                {tag}
+              </Badge>
+            ))}
+          </div>
         )}
+
+        {/* Footer */}
+        <div className="flex items-center justify-between pt-3 border-t border-border/50 mt-auto">
+          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            {entry.date && (
+              <span className="flex items-center gap-1">
+                <Calendar size={11} />
+                {new Date(entry.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </span>
+            )}
+            {!!entry.readTime && (
+              <span className="flex items-center gap-1">
+                <Clock size={11} />
+                {entry.readTime} min
+              </span>
+            )}
+            {entry.difficulty && (
+              <span className={`font-medium ${difficultyStyle[entry.difficulty]}`}>
+                {entry.difficulty}
+              </span>
+            )}
+          </div>
+          <span className="flex items-center gap-0.5 text-xs text-accent font-medium translate-x-0 group-hover:translate-x-0.5 transition-transform duration-200">
+            Read <ArrowUpRight size={13} />
+          </span>
+        </div>
       </div>
     </a>
   );
