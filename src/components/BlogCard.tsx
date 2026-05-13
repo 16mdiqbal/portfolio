@@ -30,6 +30,9 @@ const BlogCard = ({ entry }: { entry: BlogEntry }) => {
   const primaryTag = entry.tags?.[0];
   const secondaryTags = entry.tags?.slice(1) ?? [];
   const Icon = primaryTag ? tagIconMap[primaryTag] : undefined;
+  const isNew = entry.date
+    ? Date.now() - new Date(entry.date).getTime() < 30 * 24 * 60 * 60 * 1000
+    : false;
 
   return (
     <a
@@ -43,15 +46,22 @@ const BlogCard = ({ entry }: { entry: BlogEntry }) => {
 
       <div className="flex flex-col flex-1 p-5 gap-3">
 
-        {/* Primary tag with icon */}
-        {primaryTag && (
-          <div className="flex items-center gap-1.5">
-            {Icon && <Icon size={16} className="text-accent shrink-0" />}
-            <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-              {primaryTag}
+        {/* Primary tag with icon + New badge */}
+        <div className="flex items-center justify-between">
+          {primaryTag && (
+            <div className="flex items-center gap-1.5">
+              {Icon && <Icon size={16} className="text-accent shrink-0" />}
+              <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+                {primaryTag}
+              </span>
+            </div>
+          )}
+          {isNew && (
+            <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent text-accent-foreground">
+              New
             </span>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Title */}
         <h3 className="font-display text-xl leading-snug group-hover:text-accent transition-colors duration-200">

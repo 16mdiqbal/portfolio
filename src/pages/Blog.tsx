@@ -28,7 +28,7 @@ const Blog = () => {
     <SectionContainer>
       <h1 className="page-title">Blog</h1>
       <p className="page-subtitle mt-2 mb-4">
-        Technical insights on QA engineering, AI-driven testing, and automation.
+        Sharing what I learn at the intersection of AI, RAG, and test automation — written as I build and explore.
       </p>
       <div className="accent-line mb-10" />
 
