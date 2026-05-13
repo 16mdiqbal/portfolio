@@ -10,6 +10,14 @@ export interface BlogEntry {
 // Add your blog entries here. Each entry becomes a card on the Blog page.
 export const blogEntries: BlogEntry[] = [
   {
+    id: "blog-4",
+    title: "LangChain Document Loaders: The First Step Every RAG Pipeline Needs",
+    excerpt: "RAG pipelines begin by ingesting data — but most tutorials skip over how that actually works. LangChain Document Loaders convert PDFs, web pages, databases, and 100+ other sources into a single unified format your AI can work with, making them the essential first step in any production RAG system.",
+    platform: "LinkedIn",
+    date: "2026-05-12",
+    url: "https://www.linkedin.com/pulse/langchain-document-loaders-first-step-every-rag-pipeline-iqbal-96vac",
+  },
+  {
     id: "blog-3",
     title: "RAG Explained: Why Modern AI Needs More Than a Good Memory",
     excerpt: "LLMs have a knowledge cutoff, hallucinate, and can't access your private data — four critical limitations that make them unreliable in production. RAG fixes this by retrieving relevant context first, then generating grounded responses, giving AI systems access to up-to-date information and making enterprise AI actually trustworthy.",
