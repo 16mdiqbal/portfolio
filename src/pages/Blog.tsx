@@ -25,6 +25,12 @@ const Blog = () => {
   }, [search, activeTag]);
 
   return (
+    <div
+      style={{
+        backgroundImage: "radial-gradient(hsl(var(--foreground) / 0.045) 1px, transparent 1px)",
+        backgroundSize: "28px 28px",
+      }}
+    >
     <SectionContainer>
       <h1 className="page-title">Blog</h1>
       <p className="page-subtitle mt-2 mb-4">
@@ -86,6 +92,7 @@ const Blog = () => {
         for more posts.
       </p>
     </SectionContainer>
+    </div>
   );
 };
 
