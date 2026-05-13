@@ -49,12 +49,12 @@ const Blog = () => {
             className="pl-10"
           />
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible pb-1 sm:pb-0">
           {["All", ...allTags].map((tag) => (
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`text-xs px-3 py-1.5 rounded-full border transition-colors font-medium ${
+              className={`shrink-0 text-xs px-3 py-2.5 rounded-full border transition-colors font-medium ${
                 activeTag === tag
                   ? "bg-accent text-accent-foreground border-accent"
                   : "border-border text-muted-foreground hover:border-accent/50 hover:text-foreground"

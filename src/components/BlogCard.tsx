@@ -85,8 +85,8 @@ const BlogCard = ({ entry }: { entry: BlogEntry }) => {
         )}
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-3 border-t border-border/50 mt-auto">
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="flex items-center justify-between pt-3 border-t border-border/50 mt-auto gap-y-1 flex-wrap">
+          <div className="flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
             {entry.date && (
               <span className="flex items-center gap-1">
                 <Calendar size={11} />
