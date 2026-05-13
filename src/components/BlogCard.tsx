@@ -99,7 +99,7 @@ const BlogCard = ({ entry }: { entry: BlogEntry }) => {
               </span>
             )}
           </div>
-          <span className="flex items-center gap-0.5 text-xs text-accent font-medium translate-x-0 group-hover:translate-x-0.5 transition-transform duration-200">
+          <span className="flex items-center gap-0.5 text-xs text-accent font-medium opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200">
             Read <ArrowUpRight size={13} />
           </span>
         </div>
